@@ -1,0 +1,1 @@
+﻿public enum GameState { ENTERING, INGAME, INSCENE, INPAUSE, EXITING };
