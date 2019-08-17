@@ -13,8 +13,8 @@ public class Transition : MonoBehaviour
     public bool exit = true;
 
     [Header("Transition Data")]
-    public TransitionData entering;
-    public TransitionData exiting;
+    public TransitionDataOLD entering;
+    public TransitionDataOLD exiting;
     Image _img;
     RectTransform _rt;
     
@@ -30,7 +30,7 @@ public class Transition : MonoBehaviour
         
     }
 
-    void RunTransition(bool isEntering, TransitionData t) {
+    void RunTransition(bool isEntering, TransitionDataOLD t) {
         _img.SetAlpha(1f);
         bool triggered = false;
         float expectedValue = t.curve[t.curve.length - 1].value;
@@ -60,7 +60,7 @@ public class Transition : MonoBehaviour
         }));
     }
 
-    void WaitTimePre(bool isEntering, TransitionData t) {
+    void WaitTimePre(bool isEntering, TransitionDataOLD t) {
         StartCoroutine(Coroutines.WaitTime(t.preDelay, (complete) => {
             if (complete) RunTransition(isEntering, t);
         }));
@@ -78,7 +78,7 @@ public class Transition : MonoBehaviour
 }
 
 [System.Serializable]
-public class TransitionData {
+public class TransitionDataOLD {
     [Range(0, 10)]
     public float preDelay, timeLength, postDelay;
     public AnimationCurve curve;

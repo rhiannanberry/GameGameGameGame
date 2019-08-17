@@ -32,7 +32,7 @@ public class MinigameSelectionPanel : MonoBehaviour
                 t.text = "???";
             }
 
-            b.onClick.AddListener(() => TransitionController.BeginExitToScene(m.SceneNumber));
+            b.onClick.AddListener(() => ExitingMainMenu.BeginExitToScene(m.SceneName));
 
             if (!m.GameWon && !first) {
                 b.interactable = false;

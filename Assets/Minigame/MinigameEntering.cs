@@ -5,7 +5,7 @@ using TMPro;
 
 public class MinigameEntering : EnteringBehaviour
 {
-    [SerializeField] private float _enterTime = 3f;
+    [SerializeField] private float _enterTime = 4f;
     [SerializeField] private TextMeshProUGUI _title;
     [SerializeField] private TextMeshProUGUI _description;
     [SerializeField] private TextMeshProUGUI _lives;

@@ -18,6 +18,8 @@ public class PersistentDataManager : MonoBehaviour
     public static PlayerSettings playerSettings;
     public static MinigameList minigameMasterList;
     public static Run run;
+
+    
     
     
     // MonoBehaviour Methods
