@@ -3,22 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using static GameState;
 
-public class Lives : MinigameBehaviour
+public class Lives : GameStateBehaviourNew
 {
     [SerializeField] private GameObject _lifePrefab;
 
-    protected override void Start() {
-        base.Start();
-        UpdateLives();
+
+    public void OnStateEnter(GameState s) {
+        if (s == ENTERING) UpdateLives();
     }
 
-    protected override void OnStateEnter() {}
-    
-    protected override void OnStateExit() {
-        UpdateLives();
+    public void OnStateExit(GameState s) {
+        if (s == INGAME) UpdateLives();
     }
-
     private void UpdateLives() {
         foreach (Transform child in GetComponentsInChildren<Transform>()) {
             if (child == transform) continue;

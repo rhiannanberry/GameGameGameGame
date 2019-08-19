@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: HA
   _description: eee this is the descriptiong yee hawwwwwww.
-  _author: kdkdkd
+  _author: Rhiannan Berry
   _sceneName: SampleScene
   _sceneNumber: 0
-  _timeLimit: 2
+  _timeLimit: 10

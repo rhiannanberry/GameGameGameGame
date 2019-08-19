@@ -2,24 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MinigamePausing : PauseBehaviour
+public class MinigamePausing : GameStateBehaviourNew
 {
     [SerializeField] private GameObject _pauseCanvas;
     private bool _paused = false;
 
-    protected override void Start() {
-        base.Start();
-        _pauseCanvas.SetActive(false);
-    }
-
-    protected override void OnStateEnter() {
-        _paused = true;
-        _pauseCanvas.SetActive(true);
-    }
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.Escape)) {
-
+            
             if (_paused) {
                 ReturnToGame();
             } else {
@@ -28,9 +19,18 @@ public class MinigamePausing : PauseBehaviour
         }
     }
 
-    protected override void OnStateExit() {
+    public void OnStateEnterENTERING() {
         _pauseCanvas.SetActive(false);
+    }
+
+    public void OnStateEnterINPAUSE() {
+        _paused = true;
+        _pauseCanvas.SetActive(true);
+    }
+
+    public void OnStateExitINPAUSE() {
         _paused = false;
+        _pauseCanvas.SetActive(false);
     }
 
     public void ExitRun() {

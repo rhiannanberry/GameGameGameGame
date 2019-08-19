@@ -8,8 +8,12 @@ using static GameState;
 public class GameStateManager : MonoBehaviour
 {
     private GameState _state;
-    private ListenerDictionary<GameState> _enterStateListeners; 
-    private ListenerDictionary<GameState> _exitStateListeners; 
+
+    private ListenerList<GameState> _enterStateListeners;
+    //private ListenerDictionary<GameState> _enterStateListeners; 
+    private ListenerList<GameState> _exitStateListeners; 
+
+
 
     private Animator _animator;
 
@@ -24,8 +28,8 @@ public class GameStateManager : MonoBehaviour
         if (INSTANCE == null) {
             INSTANCE = this;
         }
-        _enterStateListeners = new ListenerDictionary<GameState>();
-        _exitStateListeners = new ListenerDictionary<GameState>();
+        _enterStateListeners = new ListenerList<GameState>();
+        _exitStateListeners = new ListenerList<GameState>();
 
     }
 
@@ -33,20 +37,20 @@ public class GameStateManager : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
-    public void StartListeningStateEnter(GameState s, Action a) {
-        _enterStateListeners.AddListener(s, a);
+    public void StartListeningStateEnter(Action<GameState> a) {
+        _enterStateListeners.AddListener(a);
     }
 
-    public void StartListeningStateExit(GameState s, Action a) {
-        _exitStateListeners.AddListener(s, a);
+    public void StartListeningStateExit(Action<GameState> a) {
+        _exitStateListeners.AddListener(a);
     }
 
-    public void StopListeningStateEnter(GameState s, Action a) {
-        _enterStateListeners.RemoveListener(s, a);
+    public void StopListeningStateEnter(Action<GameState> a) {
+        _enterStateListeners.RemoveListener(a);
     }
 
-    public void StopListeningStateExit(GameState s, Action a) {
-        _exitStateListeners.RemoveListener(s, a);
+    public void StopListeningStateExit(Action<GameState> a) {
+        _exitStateListeners.RemoveListener(a);
     }
 
     public void OnStateEnter(GameState enteringState) {

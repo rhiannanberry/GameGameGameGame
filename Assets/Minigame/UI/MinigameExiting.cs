@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MinigameExiting : ExitingBehaviour
+public class MinigameExiting : GameStateBehaviourNew
 {
     [Header("Master Transition")]
     [SerializeField] private float _exitTime = 5f;
@@ -16,14 +16,10 @@ public class MinigameExiting : ExitingBehaviour
 
     private float _time = 0f;
 
-    protected override void OnStateEnter() {
+    public void OnStateEnterEXITING() {
         Debug.Log("EXITING");
         PersistentDataManager.INSTANCE.SaveMinigameMasterList();
         StartCoroutine(EXIT());
-    }
-
-    protected override void OnStateExit() {
-        
     }
 
     IEnumerator EXIT() {

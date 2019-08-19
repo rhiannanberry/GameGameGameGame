@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Timer : MinigameBehaviour
+public class Timer : GameStateBehaviourNew
 {
     private bool _timerActive = false;
     private TextMeshProUGUI _timerUI;
 
     public static float time = 0;
 
-    protected override void Start() {
-        base.Start();
+    public void OnStateEnterENTERING() {
         _timerUI = GetComponent<TextMeshProUGUI>();
         time = PersistentDataManager.run.CurrentGame.TimeLimit;
         UpdateTimerUI();
     }
+    
 
-    protected override void OnStateEnter() {
+    public void OnStateEnterINGAME() {
         _timerActive = true;
     }
 
-    protected override void OnStateExit() {
+    public void OnStateExitINGAME() {
         _timerActive = false;
     }
 

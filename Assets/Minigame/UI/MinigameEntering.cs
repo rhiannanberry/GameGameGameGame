@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class MinigameEntering : EnteringBehaviour
+public class MinigameEntering : GameStateBehaviourNew
 {
 
     [Header("Master Transition")]
     [SerializeField] private float _enterTime = 4f;
     [SerializeField] private TextMeshProUGUI _title;
+    [SerializeField] private TextMeshProUGUI _author;
     [SerializeField] private TextMeshProUGUI _description;
     [SerializeField] private TextMeshProUGUI _timeLimit;
 
@@ -21,9 +22,11 @@ public class MinigameEntering : EnteringBehaviour
     [SerializeField] private TransitionData _textTransition;
     [SerializeField] private RectTransform _textRect;
 
-    protected override void OnStateEnter() {
+    public void OnStateEnterENTERING() {
+        if ()
         Minigame m = PersistentDataManager.run.CurrentGame;
         _title.text = m.Name;
+        _author.text = "Made by: " + m.Author;
         _description.text = m.Description;
         _timeLimit.text = m.TimeLimit + " Seconds";
         StartCoroutine(ENTER());
@@ -31,7 +34,7 @@ public class MinigameEntering : EnteringBehaviour
         StartCoroutine(_textTransition.StartTransitionSlide(_textRect));
     }
 
-    protected override void OnStateExit() {
+    public void OnStateExitENTERING() {
         DeactivateTransitionIn();
     }
 
