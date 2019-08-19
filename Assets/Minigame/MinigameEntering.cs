@@ -11,7 +11,6 @@ public class MinigameEntering : EnteringBehaviour
     [SerializeField] private float _enterTime = 4f;
     [SerializeField] private TextMeshProUGUI _title;
     [SerializeField] private TextMeshProUGUI _description;
-    [SerializeField] private TextMeshProUGUI _lives;
     [SerializeField] private TextMeshProUGUI _timeLimit;
 
     [Header("Background Transition")]
@@ -26,8 +25,7 @@ public class MinigameEntering : EnteringBehaviour
         Minigame m = PersistentDataManager.run.CurrentGame;
         _title.text = m.Name;
         _description.text = m.Description;
-        _lives.text = "Lives: " + PersistentDataManager.run.Lives;
-        _timeLimit.text = "Time Limit: " + m.TimeLimit;
+        _timeLimit.text = m.TimeLimit + " Seconds";
         StartCoroutine(ENTER());
         StartCoroutine(_bgTransition.StartTransitionSlide(_bgRect));
         StartCoroutine(_textTransition.StartTransitionSlide(_textRect));
