@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class MinigameExiting : ExitingBehaviour
 {
+    [Header("Master Transition")]
     [SerializeField] private float _exitTime = 5f;
-    [SerializeField] private TransitionData _transitionData;
+    [SerializeField] private GameObject _transitionCanvas;
 
-    [SerializeField] private GameObject _canvas;
-    [SerializeField] private RectTransform _backgroundPanel;
+    [Header("Background Transition")]
+    [SerializeField] private TransitionData _bgTransition;
+    [SerializeField] private RectTransform _bgRect;
 
     private float _time = 0f;
 
@@ -25,21 +27,28 @@ public class MinigameExiting : ExitingBehaviour
     }
 
     IEnumerator EXIT() {
-        _canvas.SetActive(true);
-        yield return new WaitForSeconds(_exitTime);
-        StartCoroutine(ExitTransition());
-    }
+        _bgRect.anchorMin = new Vector2( -1, _bgRect.anchorMin.y );
+        _bgRect.anchorMax = new Vector2(  0, _bgRect.anchorMax.y );
 
-    IEnumerator ExitTransition() {
-        while (_time <= _transitionData.Length) {
+        _transitionCanvas.SetActive(true);
 
-            float scaledTime01 =  _transitionData.GetEased(_time/_transitionData.Length);
-            _backgroundPanel.anchorMax = new Vector2( scaledTime01, _backgroundPanel.anchorMax.y );
-            _time += Time.deltaTime;
-            yield return null;
-        }
+        yield return new WaitForSeconds(_exitTime - _bgTransition.Length);
+
+        StartCoroutine(_bgTransition.Transition(
+            (t) => {
+
+                _bgRect.anchorMin = new Vector2( t - 1,     _bgRect.anchorMin.y );
+                _bgRect.anchorMax = new Vector2( t,         _bgRect.anchorMax.y );
+            
+            },
+
+            (complete) => {
+
+                if ( complete ) SceneManager.LoadScene(PersistentDataManager.run.NextScene());
+            
+            }
+        ));
         
-
-        SceneManager.LoadScene(PersistentDataManager.run.NextScene());
     }
+
 }

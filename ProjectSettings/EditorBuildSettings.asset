@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Minigame/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/OtherOne.unity
+    path: Assets/Minigame/OtherOne.unity
     guid: 6e39ffe7069ddb94f83681404da83f3f
   - enabled: 1
     path: Assets/MinigameSelectionScene/MainMenuScene.unity

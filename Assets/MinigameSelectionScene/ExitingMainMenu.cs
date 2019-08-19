@@ -10,36 +10,35 @@ public class ExitingMainMenu : ExitingBehaviour
     [SerializeField] private RectTransform _rt;
     [SerializeField] private TransitionData _transitionData;
 
-    private float _time = 0;
-
-
     protected override void OnStateEnter() {
         _rt.gameObject.GetComponent<Image>().enabled = true;
-        StartCoroutine(Transition());
+        StartCoroutine( _transitionData.Transition( 
+            (t) => {
+                _rt.anchorMin = new Vector2( _rt.anchorMin.x,   1 - t );
+                //_rt.anchorMax = new Vector2( _rt.anchorMax.x,   t );
+            },
+            (complete) => {
+                if (complete) SceneManager.LoadScene(_sceneName);
+            }));
     }
-
 
     protected override void OnStateExit() {
 
     }
 
+    private IEnumerator EXIT() {
+    
+        StartCoroutine(_transitionData.StartTransitionSlide(_rt));
+
+        yield return new WaitForSeconds(_transitionData.Length);
+
+        SceneManager.LoadScene(_sceneName);
+
+    }
+
+
     public static void BeginExitToScene(string sceneName) {
         _sceneName = sceneName;
         GameStateManager.INSTANCE.TriggerStateChange(GameState.EXITING);
-    }
-
-    private IEnumerator Transition() {
-        
-
-        while (_time <= _transitionData.Length) {
-
-            float scaledTime01 =  _transitionData.GetEased(_time/_transitionData.Length);
-            _rt.anchorMax = new Vector2( scaledTime01, _rt.anchorMax.y );
-            _time += Time.deltaTime;
-            yield return null;
-        }
-        
-
-        SceneManager.LoadScene(_sceneName);
     }
 }
