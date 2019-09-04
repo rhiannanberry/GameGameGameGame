@@ -37,8 +37,9 @@ public class ExitingMainMenu : ExitingBehaviour
     }
 
 
-    public static void BeginExitToScene(string sceneName) {
-        _sceneName = sceneName;
+    public static void StartNewRun(Minigame m) {
+        PersistentDataManager.INSTANCE.CreateNewRun(PersistentDataManager.minigameMasterList.RandomReorder(m));
+        _sceneName = m.SceneName;
         GameStateManager.INSTANCE.TriggerStateChange(GameState.EXITING);
     }
 }
