@@ -9,6 +9,7 @@ public class Run : System.Object
     [SerializeField] private int _runLength;
     [SerializeField] private int _minigameIndex;
     [SerializeField] private int _lives;
+    [HideInInspector] public bool gameWon = false;
 
     public Run(MinigameList runList) {
         _runList = runList;
@@ -27,12 +28,14 @@ public class Run : System.Object
     public void GameWon() {
         float timeTaken = CurrentGame.TimeLimit - Timer.time;
         bool isNewRecord = _runList.minigames[_minigameIndex].UpdateWinTime(timeTaken);
+        gameWon = true;
         RunResult();
     }
 
     public void GameLost() {
         _runList.minigames[_minigameIndex].SetGamePlayed();
         _lives--;
+        gameWon = false;
         RunResult();
     }
 

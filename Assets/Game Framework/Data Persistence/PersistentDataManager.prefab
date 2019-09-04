@@ -46,9 +46,19 @@ MonoBehaviour:
   scriptableObjectMinigames:
   - {fileID: 11400000, guid: ad8a83c0fe7e0254280fcaaa1bf3893b, type: 2}
   - {fileID: 11400000, guid: 94a0cbdf692e27044b03fb79950ce955, type: 2}
+  - {fileID: 11400000, guid: ca62511946da8bb4bb89c24792cea9c8, type: 2}
+  - {fileID: 11400000, guid: 84df994e2a3e300478142ebbd970b6a5, type: 2}
+  - {fileID: 11400000, guid: d04d6f1f96600274784f1803ec8eb819, type: 2}
   debug_playerSettings:
     _masterVolume: 1
     _sfxVolume: 1
     _musicVolume: 1
   debug_minigameMasterList:
     minigames: []
+  debug_run:
+    _runList:
+      minigames: []
+    _runLength: 0
+    _minigameIndex: 0
+    _lives: 0
+    gameWon: 0

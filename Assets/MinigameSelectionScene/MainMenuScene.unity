@@ -602,6 +602,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9029913286018497794, guid: 3a793800a07b2a44db78818f15464ccf,
+        type: 3}
+      propertyPath: scriptableObjectMinigames.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9029913286018497794, guid: 3a793800a07b2a44db78818f15464ccf,
+        type: 3}
+      propertyPath: scriptableObjectMinigames.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: ca62511946da8bb4bb89c24792cea9c8,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a793800a07b2a44db78818f15464ccf, type: 3}
 --- !u!1 &1550590474
