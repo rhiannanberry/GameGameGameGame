@@ -11,7 +11,6 @@ public class Minigame : System.Object
     [SerializeField] private string _description;
     [SerializeField] private string _author;
     [SerializeField] private string _sceneName;
-    [SerializeField] private int _sceneNumber;
     [SerializeField] private float _timeLimit;
     [SerializeField] private float _lowestWinTime;
     [SerializeField] private bool _gamePlayed;
@@ -22,7 +21,6 @@ public class Minigame : System.Object
     public string Description {get {return _description; }}
     public string Author {get {return _author; }}
     public string SceneName {get {return _sceneName; }}
-    public int SceneNumber {get {return _sceneNumber; }}
     public float TimeLimit {get {return _timeLimit; }}
     public float LowestWinTime {get {return _lowestWinTime; }}
     public bool GamePlayed {get {return _gamePlayed; }}
@@ -32,12 +30,11 @@ public class Minigame : System.Object
     // Constructors
 
     // Full Constructor
-    public Minigame(string gameName, string description, string author, string sceneName, int sceneNumber, float timeLimit, float lowestWinTime, bool gamePlayed, bool gameWon) {
+    public Minigame(string gameName, string description, string author, string sceneName, float timeLimit, float lowestWinTime, bool gamePlayed, bool gameWon) {
         _name = gameName;
         _description = description;
         _author = author;
         _sceneName = sceneName;
-        _sceneNumber = sceneNumber;
         _timeLimit = timeLimit;
         _lowestWinTime = lowestWinTime;
         _gamePlayed = gamePlayed;
@@ -45,8 +42,8 @@ public class Minigame : System.Object
     }
 
     //New-save Constructor
-    public Minigame(string gameName, string description, string author, string sceneName, int sceneNumber, float timeLimit) : 
-        this(gameName, description, author, sceneName, sceneNumber, timeLimit, -1, false, false) {
+    public Minigame(string gameName, string description, string author, string sceneName, float timeLimit) : 
+        this(gameName, description, author, sceneName, timeLimit, -1, false, false) {
         }
 
 

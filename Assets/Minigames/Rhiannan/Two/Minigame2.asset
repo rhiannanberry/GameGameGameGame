@@ -15,6 +15,6 @@ MonoBehaviour:
   _name: dddd
   _description: dddd
   _author: dd
+  _scenePath: Assets/Minigames/Rhiannan/Two/OtherOne.unity
   _sceneName: OtherOne
-  _sceneNumber: 1
   _timeLimit: 4

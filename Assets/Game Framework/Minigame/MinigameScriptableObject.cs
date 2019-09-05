@@ -10,11 +10,11 @@ public class MinigameScriptableObject : ScriptableObject
     public string _name;
     [TextArea] public string _description;
     public string _author;
-    public string _sceneName;
-    public int _sceneNumber;
+    [HideInInspector] public string _scenePath;
+    [HideInInspector] public string _sceneName;
     public float _timeLimit;
 
     public Minigame ToObject() {
-        return new Minigame(_name, _description, _author, _sceneName, _sceneNumber, _timeLimit);
+        return new Minigame(_name, _description, _author, _sceneName, _timeLimit);
     }
 }

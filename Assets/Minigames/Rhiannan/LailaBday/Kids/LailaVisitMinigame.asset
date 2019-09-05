@@ -15,6 +15,6 @@ MonoBehaviour:
   _name: Visitation
   _description: Use WASD to help Rhiannan visit her friend Laila!
   _author: Rhiannan Berry
+  _scenePath: Assets/Minigames/Rhiannan/LailaBday/Kids/LailaBdayVisit.unity
   _sceneName: LailaBdayVisit
-  _sceneNumber: 4
   _timeLimit: 2

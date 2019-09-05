@@ -15,6 +15,6 @@ MonoBehaviour:
   _name: Blow
   _description: Blow out all candles by clicking on them
   _author: Rhiannan Berry
+  _scenePath: Assets/Minigames/Rhiannan/LailaBday/Candle/LailaBdayBlow.unity
   _sceneName: LailaBdayBlow
-  _sceneNumber: 5
   _timeLimit: 15

@@ -84,7 +84,7 @@ public class PersistentDataManager : MonoBehaviour
     }
 
     private Minigame IsInMinigame() {
-        return minigameMasterList.minigames.Find(item => item.SceneNumber == SceneManager.GetActiveScene().buildIndex);
+        return minigameMasterList.minigames.Find(item => item.SceneName == SceneManager.GetActiveScene().name);
     }
 
 }

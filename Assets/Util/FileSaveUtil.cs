@@ -7,6 +7,10 @@ using System.Runtime.Serialization;
 public static class FileSaveUtil
 {
     public static T LoadData<T>(string saveName) {
+        #if UNITY_WEBGL
+        return default(T);
+        #endif
+
         if (File.Exists(FullPath(saveName))) {
                 BinaryFormatter bf = new BinaryFormatter();
                 FileStream file = File.Open(FullPath(saveName), FileMode.Open);
@@ -20,6 +24,10 @@ public static class FileSaveUtil
     }
 
     public static void SaveData<T>(string saveName, T data) {
+        #if UNITY_WEBGL
+        return;
+        #endif
+
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(FullPath(saveName));
         bf.Serialize(file, data);

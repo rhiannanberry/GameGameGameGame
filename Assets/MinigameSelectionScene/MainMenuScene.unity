@@ -602,17 +602,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9029913286018497794, guid: 3a793800a07b2a44db78818f15464ccf,
-        type: 3}
-      propertyPath: scriptableObjectMinigames.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9029913286018497794, guid: 3a793800a07b2a44db78818f15464ccf,
-        type: 3}
-      propertyPath: scriptableObjectMinigames.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: ca62511946da8bb4bb89c24792cea9c8,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a793800a07b2a44db78818f15464ccf, type: 3}
 --- !u!1 &1550590474
@@ -683,10 +672,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 900, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -768,10 +757,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 900, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

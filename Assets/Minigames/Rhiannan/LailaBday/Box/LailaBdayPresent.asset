@@ -15,6 +15,6 @@ MonoBehaviour:
   _name: OPEN
   _description: Pound that spacebar to open your gift!
   _author: Rhiannan Berry
+  _scenePath: Assets/Minigames/Rhiannan/LailaBday/Box/LailaBdayPresent.unity
   _sceneName: LailaBdayPresent
-  _sceneNumber: 6
   _timeLimit: 6
