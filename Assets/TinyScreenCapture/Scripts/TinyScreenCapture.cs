@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine.UI;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 public class TinyScreenCapture : MonoBehaviour
 {
@@ -13,8 +17,8 @@ public class TinyScreenCapture : MonoBehaviour
     [Header ("Prefix for saved filed.")]
     public string fileName = "screenshoot";
 
-	[Range(0.1f, 1f)]
-	public float captureFrequency = .1f;
+	[Range(10, 100)] [Tooltip("In Milliseconds")]
+	public int captureFrequency = 10;
 
 	public RectTransform cursor;
 
@@ -22,6 +26,7 @@ public class TinyScreenCapture : MonoBehaviour
 	private bool _captureActive = false;
 	private int _frameCount = 0;
 	private float _time = 0f;
+	private List<Bitmap> _bmps;
 
     //do not destroy object when changing or reloading scenes
 	void Awake(){
@@ -42,12 +47,19 @@ public class TinyScreenCapture : MonoBehaviour
 		if (Input.GetKeyDown("v")) {
 			_captureActive = !_captureActive;
 			_frameCount = 0;
-			_time = captureFrequency;
+			_time = 1.0f / captureFrequency;
+			if (_captureActive) {
+				_bmps = new List<Bitmap>();
+			} else {
+				string timestamp = System.DateTime.Now.ToString ("dd_MM_yyyy_HH_mm_ss");
+				string filePath = Application.dataPath + "/../Assets/TinyScreenCapture/ScreenCapture/"+ fileName + "_" + timestamp;
+				ConvertToGif.Convert(filePath, captureFrequency, _bmps);
+			}
 		}
 
 		if (_captureActive) {
 			_time += Time.deltaTime;
-			if (_time >= captureFrequency) {
+			if (_time >= 1.0f / captureFrequency) {
 				_time = 0f;
 				StartCoroutine(TinyCaptureClip());
 			}
@@ -83,7 +95,9 @@ public class TinyScreenCapture : MonoBehaviour
 		string timestamp = System.DateTime.Now.ToString ("dd_MM_yyyy_HH_mm_ss");
 
 		//save image
-        File.WriteAllBytes(Application.dataPath + "/../Assets/TinyScreenCapture/ScreenCapture/"+ fileName +"_" + timestamp + ".png", bytes);
+        File.WriteAllBytes(Application.dataPath + "/../Assets/TinyScreenCapture/ScreenCapture/"+ fileName +"_" + timestamp + ".bmp", bytes);
+
+		UnityEditor.AssetDatabase.Refresh();
 	}
 
 	//capture screen
@@ -103,16 +117,11 @@ public class TinyScreenCapture : MonoBehaviour
 
 		byte[] bytes = texture.EncodeToPNG();
 
-		string directoryPath = Application.dataPath + "/../Assets/TinyScreenCapture/ScreenCapture/"+ fileName;
+		_bmps.Add(new Bitmap(new MemoryStream(bytes)));
 
-		if(!Directory.Exists(directoryPath)) {    
-			//if it doesn't, create it
-			Directory.CreateDirectory(directoryPath);
 		
-		}
 
-		//save image
-        File.WriteAllBytes(directoryPath + "/" + (_frameCount++) + ".png", bytes);
+		_frameCount++;
 	}
 
 	#endif
