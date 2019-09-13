@@ -183,9 +183,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4808792114562924}
-  - component: {fileID: 114859202064477484}
+  - component: {fileID: 8110944746749334212}
   m_Layer: 0
-  m_Name: TinyScreenCapture
+  m_Name: GameToGif
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -206,7 +206,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114859202064477484
+--- !u!114 &8110944746749334212
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,9 +215,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1373293837335106}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f54c7f45346f4336a1555b3d5b7d77f, type: 3}
+  m_Script: {fileID: 11500000, guid: d26ca56c21a056845bcc18d3a3f35371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fileName: screenshoot
-  captureFrequency: 0.1
+  captureFrequency: 10
+  maxCaptureLengthSeconds: 10
   cursor: {fileID: 1125532979}
