@@ -7,25 +7,21 @@ using UnityEditor;
 [InitializeOnLoadAttribute]
 public class SaveSettingsEditor : EditorWindow
 {
-    private bool _playing = false;
-    private bool settingsSavingEnabled;
-    private bool minigameSavingEnabled;
-
     [MenuItem ("Window/Save Settings")]
     public static void  ShowWindow () {
         EditorWindow.GetWindow(typeof(SaveSettingsEditor), false, "Save Settings", true);
     }
     
     void OnGUI () {
-        if (EditorApplication.isPlaying && !_playing) {
-            PersistentDataManager.settingsSavingEnabled = settingsSavingEnabled;
-            PersistentDataManager.minigameSavingEnabled = minigameSavingEnabled;
+        if (!EditorPrefs.HasKey("settingsSavingEnabled")) {
+            EditorPrefs.SetBool("settingsSavingEnabled", false);
+            EditorPrefs.SetBool("minigameSavingEnabled", false);
         }
-        PersistentDataManager.settingsSavingEnabled = EditorGUILayout.Toggle("Enable Settings Saving", PersistentDataManager.settingsSavingEnabled);
-        PersistentDataManager.minigameSavingEnabled = EditorGUILayout.Toggle("Enable Minigame Saving", PersistentDataManager.minigameSavingEnabled);
+        EditorPrefs.SetBool("settingsSavingEnabled", EditorGUILayout.Toggle("Enable Settings Saving",EditorPrefs.GetBool("settingsSavingEnabled")));
+        EditorPrefs.SetBool("minigameSavingEnabled", EditorGUILayout.Toggle("Enable Minigame Saving",EditorPrefs.GetBool("minigameSavingEnabled")));
 
-        settingsSavingEnabled = PersistentDataManager.settingsSavingEnabled;
-        minigameSavingEnabled = PersistentDataManager.minigameSavingEnabled;
+        SaveSettings.settingsSavingEnabled = EditorPrefs.GetBool("settingsSavingEnabled");
+        SaveSettings.minigameSavingEnabled = EditorPrefs.GetBool("minigameSavingEnabled");
 
         using (new EditorGUI.DisabledScope(!FileSaveUtil.Exists("playerSettings"))) {
             if (GUILayout.Button("Delete Player Settings")) {

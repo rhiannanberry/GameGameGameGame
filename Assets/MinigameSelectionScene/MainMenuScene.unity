@@ -542,11 +542,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3371435518729477995, guid: 3a793800a07b2a44db78818f15464ccf,
-        type: 3}
-      propertyPath: m_Name
-      value: Persistent Objects
-      objectReference: {fileID: 0}
     - target: {fileID: 3371435518729477972, guid: 3a793800a07b2a44db78818f15464ccf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -600,6 +595,16 @@ PrefabInstance:
     - target: {fileID: 3371435518729477972, guid: 3a793800a07b2a44db78818f15464ccf,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3371435518729477995, guid: 3a793800a07b2a44db78818f15464ccf,
+        type: 3}
+      propertyPath: m_Name
+      value: Persistent Objects
+      objectReference: {fileID: 0}
+    - target: {fileID: 9029913286018497794, guid: 3a793800a07b2a44db78818f15464ccf,
+        type: 3}
+      propertyPath: scriptableObjectMinigames.Array.size
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
