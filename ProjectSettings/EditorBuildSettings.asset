@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Minigames/Authors/Adrian Brody/Cool Game/adrian_coolgame_scene.unity
     guid: 7fad500d26558424aa01dd88aab355ae
+  - enabled: 1
+    path: Assets/Minigames/Authors/John Britti/MinigameMinigameMinigameMinigame/MinigameMinigameMinigameMinigame_scene.unity
+    guid: 9f35fe640da8d43969f4b29c0a3c252b
   m_configObjects: {}

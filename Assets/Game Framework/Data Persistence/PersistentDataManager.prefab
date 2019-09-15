@@ -50,6 +50,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ad8a83c0fe7e0254280fcaaa1bf3893b, type: 2}
   - {fileID: 11400000, guid: d04d6f1f96600274784f1803ec8eb819, type: 2}
   - {fileID: 11400000, guid: b1cbe0011452e344b9a95917515240c9, type: 2}
+  - {fileID: 11400000, guid: fc5f9919fe3194996b4ac20c7a5c7cb0, type: 2}
   debug_playerSettings:
     _masterVolume: 1
     _sfxVolume: 1
@@ -63,3 +64,4 @@ MonoBehaviour:
     _minigameIndex: 0
     _lives: 0
     gameWon: 0
+    exitEarly: 0
