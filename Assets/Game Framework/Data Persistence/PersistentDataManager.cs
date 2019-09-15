@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.SceneManagement;
 
 public class PersistentDataManager : MonoBehaviour
@@ -19,7 +20,8 @@ public class PersistentDataManager : MonoBehaviour
     public static MinigameList minigameMasterList;
     public static Run run;
 
-    
+    public static bool minigameSavingEnabled;
+    public static bool settingsSavingEnabled;
     
     
     // MonoBehaviour Methods
@@ -50,13 +52,13 @@ public class PersistentDataManager : MonoBehaviour
     //Public Methods
 
     public void SavePlayerSettings() {
-        if (playerSettings != null) {
+        if (playerSettings != null && settingsSavingEnabled) {
             FileSaveUtil.SaveData<PlayerSettings>("playerSettings", playerSettings);
         }
     }
 
     public void SaveMinigameMasterList() {
-        if (minigameMasterList != null) {
+        if (minigameMasterList != null && minigameSavingEnabled) {
             FileSaveUtil.SaveData<MinigameList>("minigameMasterList", minigameMasterList);
         }
     }
@@ -71,14 +73,14 @@ public class PersistentDataManager : MonoBehaviour
 
     private void LoadPlayerSettings() {
         playerSettings = FileSaveUtil.LoadData<PlayerSettings>("playerSettings");
-        if (playerSettings == null) {
+        if (playerSettings == null || settingsSavingEnabled == false) {
             playerSettings = new PlayerSettings();
         }
     }
 
     private void LoadMinigameMasterList() {
         minigameMasterList = FileSaveUtil.LoadData<MinigameList>("minigameMasterList");
-        if (minigameMasterList == null) {
+        if (minigameMasterList == null || minigameSavingEnabled == false) {
             minigameMasterList = new MinigameList(scriptableObjectMinigames);
         }
     }
@@ -86,5 +88,6 @@ public class PersistentDataManager : MonoBehaviour
     private Minigame IsInMinigame() {
         return minigameMasterList.minigames.Find(item => item.SceneName == SceneManager.GetActiveScene().name);
     }
+
 
 }

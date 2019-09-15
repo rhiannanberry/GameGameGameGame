@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEditor;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
 public static class FileSaveUtil
@@ -33,6 +34,22 @@ public static class FileSaveUtil
         bf.Serialize(file, data);
         Debug.Log("DATA SAVED");
         file.Close();
+        
+        #if UNITY_EDITOR
+        UnityEditor.AssetDatabase.Refresh();
+        #endif
+
+    }
+
+    public static bool Exists(string saveName) {
+        return File.Exists(FullPath(saveName));
+    }
+
+    public static void Delete(string saveName) {
+        if (Exists(saveName)) {
+            File.Delete(FullPath(saveName));
+            UnityEditor.AssetDatabase.Refresh();
+        }
     }
 
     private static string FullPath(string saveName) {

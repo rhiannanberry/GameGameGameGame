@@ -10,6 +10,7 @@ public class Run : System.Object
     [SerializeField] private int _minigameIndex;
     [SerializeField] private int _lives;
     [HideInInspector] public bool gameWon = false;
+    [HideInInspector] public bool exitEarly = false;
 
     public Run(MinigameList runList) {
         _runList = runList;
@@ -44,6 +45,9 @@ public class Run : System.Object
     }
 
     public string NextScene() {
+        if (exitEarly) {
+            return "RunOverScene";
+        }
         if (HasNextGame()) {
             _minigameIndex += 1;
             return _runList.minigames[_minigameIndex].SceneName;
