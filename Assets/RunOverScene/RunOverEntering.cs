@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class RunOverEntering : EnteringBehaviour
 {
-    [SerializeField] private TransitionData _bgTransition;
-    [SerializeField] private RectTransform _bgRect;
+    [SerializeField] private TransitionData _bgTransition = null;
+    [SerializeField] private RectTransform _bgRect = null;
     protected override void OnStateEnter() {
         StartCoroutine( _bgTransition.Transition(
             (t) => {

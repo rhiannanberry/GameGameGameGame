@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MinigameEnteringUI : EnteringBehaviour
 {
-    [SerializeField] private TransitionData _transitionData;
+    [SerializeField] private TransitionData _transitionData = null;
     private RectTransform _rectTransform;
 
     private float _time = 0;

@@ -7,9 +7,9 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "Transition Data", menuName = "ScriptableObjects/Transition Data", order = 2)]
 public class TransitionData : ScriptableObject
 {
-    [SerializeField] private Ease easingType;
-    [SerializeField] private AnimationCurve customEasingCurve;
-    [SerializeField] [Range(0f, 10f)] private float transitionLength;
+    [SerializeField] private Ease easingType = Ease.LINEAR;
+    [SerializeField] private AnimationCurve customEasingCurve = null;
+    [SerializeField] [Range(0f, 10f)] private float transitionLength = 2f;
 
     public float Length { get {return transitionLength; }}
 

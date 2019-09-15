@@ -7,9 +7,9 @@ using TMPro;
 public class UISlideEnter : EnteringBehaviour
 {
     [Range(0f,10f)]
-    [SerializeField] private float _timeLength;
-    [SerializeField] private AnimationCurve _curve;
-    [SerializeField] private RectTransform _rt;
+    [SerializeField] private float _timeLength = 2f;
+    [SerializeField] private AnimationCurve _curve = null;
+    [SerializeField] private RectTransform _rt = null;
 
     protected override void OnStateEnter() {
         _rt = GetComponent<RectTransform>();

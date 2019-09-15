@@ -9,18 +9,18 @@ public class MinigameEntering : EnteringBehaviour
 
     [Header("Master Transition")]
     [SerializeField] private float _enterTime = 4f;
-    [SerializeField] private TextMeshProUGUI _title;
-    [SerializeField] private TextMeshProUGUI _author;
-    [SerializeField] private TextMeshProUGUI _description;
-    [SerializeField] private TextMeshProUGUI _timeLimit;
+    [SerializeField] private TextMeshProUGUI _title = null;
+    [SerializeField] private TextMeshProUGUI _author = null;
+    [SerializeField] private TextMeshProUGUI _description = null;
+    [SerializeField] private TextMeshProUGUI _timeLimit = null;
 
     [Header("Background Transition")]
-    [SerializeField] private TransitionData _bgTransition;
-    [SerializeField] private RectTransform _bgRect;
+    [SerializeField] private TransitionData _bgTransition = null;
+    [SerializeField] private RectTransform _bgRect = null;
 
     [Header("Minigame Details Transition")]
-    [SerializeField] private TransitionData _textTransition;
-    [SerializeField] private RectTransform _textRect;
+    [SerializeField] private TransitionData _textTransition = null;
+    [SerializeField] private RectTransform _textRect = null;
 
     protected override void OnStateEnter() {
         Minigame m = PersistentDataManager.run.CurrentGame;

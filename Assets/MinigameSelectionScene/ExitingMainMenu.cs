@@ -7,8 +7,8 @@ public class ExitingMainMenu : ExitingBehaviour
 {
     private static string _sceneName;
     
-    [SerializeField] private RectTransform _rt;
-    [SerializeField] private TransitionData _transitionData;
+    [SerializeField] private RectTransform _rt = null;
+    [SerializeField] private TransitionData _transitionData = null;
 
     protected override void OnStateEnter() {
         _rt.gameObject.GetComponent<Image>().enabled = true;

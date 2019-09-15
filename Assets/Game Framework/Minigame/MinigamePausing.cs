@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MinigamePausing : PauseBehaviour
 {
-    [SerializeField] private GameObject _pauseCanvas;
+    [SerializeField] private GameObject _pauseCanvas = null;
     private bool _paused = false;
 
     protected override void Start() {
@@ -34,6 +34,7 @@ public class MinigamePausing : PauseBehaviour
     }
 
     public void ExitRun() {
+        PersistentDataManager.run.exitEarly = true;
         GameStateManager.INSTANCE.TriggerStateChange(GameState.INGAME);
         GameStateManager.INSTANCE.TriggerStateChange(GameState.EXITING);
     }
