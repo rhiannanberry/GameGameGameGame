@@ -60,3 +60,6 @@ crashlytics-build.properties
 
 # Screenshots and Gifs
 Assets/TinyScreenCapture/ScreenCapture/*
+
+# Save data
+*.save
