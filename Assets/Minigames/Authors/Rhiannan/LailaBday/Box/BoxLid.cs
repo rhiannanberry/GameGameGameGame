@@ -9,7 +9,6 @@ public class BoxLid : MinigameBehaviour
     public float downSpeed = .1f;
     public float upSpeed = .1f;
 
-    private bool won = false;
     private bool _canInput = false;
     // Start is called before the first frame update
     protected override void Start()

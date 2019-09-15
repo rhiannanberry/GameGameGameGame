@@ -6,7 +6,7 @@ using TMPro;
 
 public class MinigameSelectionPanel : MonoBehaviour
 {
-    [SerializeField] private GameObject _buttonPrefab;
+    [SerializeField] private GameObject _buttonPrefab = null;
 
     private void Start() {
         DestroyExampleButtons();

@@ -8,13 +8,11 @@ public class MinigameExiting : ExitingBehaviour
 {
     [Header("Master Transition")]
     [SerializeField] private float _exitTime = 5f;
-    [SerializeField] private GameObject _transitionCanvas;
+    [SerializeField] private GameObject _transitionCanvas = null;
 
     [Header("Background Transition")]
-    [SerializeField] private TransitionData _bgTransition;
-    [SerializeField] private RectTransform _bgRect;
-
-    private float _time = 0f;
+    [SerializeField] private TransitionData _bgTransition = null;
+    [SerializeField] private RectTransform _bgRect = null;
 
     protected override void OnStateEnter() {
         Debug.Log("EXITING");

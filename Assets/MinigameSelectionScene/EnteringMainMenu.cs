@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnteringMainMenu : EnteringBehaviour
 {
-    [SerializeField] private TransitionData _mainMenuEnterTransition;
-    [SerializeField] private Transform _mainMenuTransform;
+    [SerializeField] private TransitionData _mainMenuEnterTransition = null;
+    [SerializeField] private Transform _mainMenuTransform = null;
     protected override void OnStateEnter() {
         StartCoroutine( _mainMenuEnterTransition.Transition(
             (t) => {

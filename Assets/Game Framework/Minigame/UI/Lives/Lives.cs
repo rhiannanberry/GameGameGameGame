@@ -6,7 +6,7 @@ using TMPro;
 
 public class Lives : MinigameBehaviour
 {
-    [SerializeField] private GameObject _lifePrefab;
+    [SerializeField] private GameObject _lifePrefab = null;
 
     protected override void Start() {
         base.Start();
