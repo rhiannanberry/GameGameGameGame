@@ -51,3 +51,6 @@
    ![alt](ReadmeScreenshots/AddRequiredToScene.png)
 
 Now, if you click the play button on either your game scene or the minigame select scene, your game should start playing, or be active in the list of playable games. 💃💃💃
+
+## IMPORTANT NOTE:
+Because of the way the saving is currently managed, your game will not be updated if a save file already exists. To manage existence of save files, go to Window > Save Settings, and you can delete files / toggle ability to save at all to your heart's content.
