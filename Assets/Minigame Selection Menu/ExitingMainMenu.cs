@@ -42,4 +42,15 @@ public class ExitingMainMenu : ExitingBehaviour
         _sceneName = m.SceneName;
         GameStateManager.INSTANCE.TriggerStateChange(GameState.EXITING);
     }
+
+    public void StartNewQuickplayRun() {
+        PersistentDataManager.INSTANCE.CreateNewRun(PersistentDataManager.minigameMasterList.RandomReorder());
+        _sceneName = PersistentDataManager.run.CurrentGame.SceneName;
+        GameStateManager.INSTANCE.TriggerStateChange(GameState.EXITING);
+    }
+
+    public void GotoCustomPlay() {
+        _sceneName = "MinigameSelectionScene";
+        GameStateManager.INSTANCE.TriggerStateChange(GameState.EXITING);
+    }
 }
