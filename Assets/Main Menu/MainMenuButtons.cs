@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MainMenuButtons : MonoBehaviour
 {
+    [SerializeField] private TransitionData _mainMenuEnterTransition = null;
+    [SerializeField] private Transform _mainMenuTransform = null;
     [SerializeField] private GameObject _ExitButton = null;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,18 @@ public class MainMenuButtons : MonoBehaviour
     {
         
     }
+
+    public void GotoSettings() {
+        StartCoroutine( _mainMenuEnterTransition.Transition(
+            (t) => {
+                _mainMenuTransform.localScale = Vector2.one - Vector2.one * t ;
+            },
+            (complete) => {
+                GameStateManager.INSTANCE.TriggerStateChange(GameState.INSCENE);
+            }
+        ));
+    }
+
 
     public void ExitGame() {
         #if UNITY_EDITOR
