@@ -63,3 +63,7 @@ Assets/TinyScreenCapture/ScreenCapture/*
 
 # Save data
 *.save
+*.save.meta
+
+# Unity version file
+ProjectSettings/ProjectVersion.txt
