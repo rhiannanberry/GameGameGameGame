@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Arm : MinigameBehaviour
+public class RightBarrier : MinigameBehaviour
 {
     bool running = false;
     public GameObject player;
@@ -20,9 +20,9 @@ public class Arm : MinigameBehaviour
         running = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject == player && running) {
-            PersistentDataManager.run.GameLost();
+            PersistentDataManager.run.GameWon();
         }
     }
 

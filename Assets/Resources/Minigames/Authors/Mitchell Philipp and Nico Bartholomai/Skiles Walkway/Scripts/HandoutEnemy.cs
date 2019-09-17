@@ -10,7 +10,7 @@ public class HandoutEnemy : MinigameBehaviour
     public float rotationRange = 90;
     public float rotationSpeed = 5;
     public int rotationDirection = 1;
-
+    public GameObject player;
     float currentRotation;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +25,12 @@ public class HandoutEnemy : MinigameBehaviour
 
     protected override void OnStateExit() {
         running = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject == player && running) {
+            PersistentDataManager.run.GameLost();
+        }
     }
 
     // Update is called once per frame
