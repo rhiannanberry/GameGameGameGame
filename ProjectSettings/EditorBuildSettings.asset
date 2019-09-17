@@ -29,4 +29,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Resources/Minigames/Authors/Adrian Brody/Cool Game/adrian_coolgame_scene.unity
     guid: 7fad500d26558424aa01dd88aab355ae
+  - enabled: 1
+    path: Assets/Resources/Minigames/Authors/Mitchell Philipp and Nico Bartholomai/Skiles
+      Walkway/mitchell_and_nico_skiles_walkway_scene.unity
+    guid: 38fcb3588ca2e5b6d860ae223c234a6a
   m_configObjects: {}
