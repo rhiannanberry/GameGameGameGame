@@ -6,7 +6,7 @@ public class Player : MinigameBehaviour
 {
 
     Rigidbody2D r;
-    bool running = false;
+    static bool running = false;
     public float moveForce = 5;
 
     // Start is called before the first frame update
@@ -17,11 +17,11 @@ public class Player : MinigameBehaviour
     }
 
     protected override void OnStateEnter() {
-        running = true;
+        if (!running) running = true;
     }
 
     protected override void OnStateExit() {
-        running = false;
+        if (running) running = false;
     }
 
     // Update is called once per frame

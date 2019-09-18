@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class RightBarrier : MinigameBehaviour
 {
-    bool running = false;
-    public GameObject player;
+    static bool running = false;
+    GameObject player;
     // Start is called before the first frame update
     void Start()
     {
         base.Start();
+        player = GameObject.Find("Player");
     }
 
     protected override void OnStateEnter() {
-        running = true;
+        if (!running) running = true;
     }
 
     protected override void OnStateExit() {
-        running = false;
+        if (running) running = false;
     }
 
     private void OnCollisionEnter2D(Collision2D other) {

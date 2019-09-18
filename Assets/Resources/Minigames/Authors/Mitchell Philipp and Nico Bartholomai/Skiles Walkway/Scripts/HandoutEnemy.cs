@@ -5,26 +5,27 @@ using UnityEngine;
 
 public class HandoutEnemy : MinigameBehaviour
 {
-    bool running = false;
+    static bool running = false;
     
     public float rotationRange = 90;
     public float rotationSpeed = 5;
     public int rotationDirection = 1;
-    public GameObject player;
+    GameObject player;
     float currentRotation;
     // Start is called before the first frame update
     void Start()
     {
         base.Start();
+        player = GameObject.Find("Player");
         currentRotation = 0;
     }
 
     protected override void OnStateEnter() {
-        running = true;
+        if (!running) running = true;
     }
 
     protected override void OnStateExit() {
-        running = false;
+        if (running) running = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

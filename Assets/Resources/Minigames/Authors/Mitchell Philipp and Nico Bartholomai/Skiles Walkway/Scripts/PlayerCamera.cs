@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerCamera : MinigameBehaviour
 {
-    bool running = false;
-    public GameObject player;
+    static bool running = false;
+    GameObject player;
     public GameObject leftBarrier;
     public GameObject rightBarrier;
     public float borderMargin = 10;
@@ -13,17 +13,18 @@ public class PlayerCamera : MinigameBehaviour
     float cameraZ;
     
     protected override void OnStateEnter() {
-        running = true;
+        if (!running) running = true;
     }
 
     protected override void OnStateExit() {
-        running = false;
+        if (running) running = false;
     }
 
     // Start is called before the first frame update
     void Start()
     {
         base.Start();
+        player = GameObject.Find("Player");
         cameraY = transform.position.y;
         cameraZ = transform.position.z;
     }
