@@ -63,3 +63,4 @@ Assets/TinyScreenCapture/ScreenCapture/*
 
 # Save data
 *.save
+*.save.meta
