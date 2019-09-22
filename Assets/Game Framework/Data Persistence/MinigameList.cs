@@ -45,6 +45,12 @@ public class MinigameList
         }
     }
 
+    public MinigameList RandomReorder() {
+        List<Minigame> newList = minigames;
+        newList.Shuffle();
+        return new MinigameList(newList);
+    }
+
     public MinigameList RandomReorder(Minigame first) {
         List<Minigame> newList = minigames;
         newList.Shuffle();

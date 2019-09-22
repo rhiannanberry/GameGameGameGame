@@ -44,6 +44,22 @@ public class TransitionData : ScriptableObject
         complete( true );
     }
 
+    public IEnumerator ReverseTransition(System.Action<float> t, System.Action<bool> complete) {
+        float _time = transitionLength;
+        
+        complete( false );
+        
+        while ( _time >= transitionLength ) {
+            t( GetEased( _time / transitionLength ) );
+            _time -= Time.deltaTime;
+            yield return null;
+        }
+        
+        t( 0f );
+        
+        complete( true );
+    }
+
     public IEnumerator StartTransitionSlide( params RectTransform[] rects ) {
         float _time = 0f;
 
