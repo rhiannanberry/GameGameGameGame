@@ -29,4 +29,20 @@ public class PlayerSettings : System.Object
     public PlayerSettings() {
         _masterVolume = _sfxVolume = _musicVolume = 1f;
     }
+
+    public PlayerSettings Copy() {
+        return (PlayerSettings)this.MemberwiseClone();
+    }
+
+    public override bool Equals(object obj) {
+        PlayerSettings other = (PlayerSettings)obj;
+        return (MasterVolume == other.MasterVolume) && (MusicVolume == other.MusicVolume) && (SFXVolume == other.SFXVolume);
+    }
+
+    public override string ToString() {
+        string str = "Master Volume: " + _masterVolume + "\n" +
+                    "Music Volume: " + _musicVolume + "\n" +
+                    "SFX Volume: " + _sfxVolume + "\n";
+        return str;
+    }
 }

@@ -46,6 +46,8 @@ public class PersistentDataManager : MonoBehaviour
     //Public Methods
 
     public void SavePlayerSettings() {
+        print(playerSettings);
+        print(SaveSettings.settingsSavingEnabled);
         if (playerSettings != null && SaveSettings.settingsSavingEnabled) {
             FileSaveUtil.SaveData<PlayerSettings>("playerSettings", playerSettings);
         }
@@ -62,16 +64,14 @@ public class PersistentDataManager : MonoBehaviour
         debug_run = run;
     }
 
-
-    // Private Methods
-
-    private void LoadPlayerSettings() {
+    public void LoadPlayerSettings() {
         playerSettings = FileSaveUtil.LoadData<PlayerSettings>("playerSettings");
         if (playerSettings == null || SaveSettings.settingsSavingEnabled == false) {
             playerSettings = new PlayerSettings();
         }
     }
 
+    // Private Methods
     private void LoadMinigameMasterList() {
         minigameMasterList = FileSaveUtil.LoadData<MinigameList>("minigameMasterList");
         if (minigameMasterList == null || SaveSettings.minigameSavingEnabled == false) {
