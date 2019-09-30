@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuButtons : MonoBehaviour
 {
@@ -19,10 +20,23 @@ public class MainMenuButtons : MonoBehaviour
         _settingsTransform.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void OpenCustomPlay() {
+        RectTransform rtMainMenu = _mainMenuTransform.GetComponent<RectTransform>();
+       
+        Vector2 mainMenuAnchorMin = rtMainMenu.anchorMin;
+        Vector2 mainMenuAnchorMax = rtMainMenu.anchorMax;
+
+        StartCoroutine( _mainMenuEnterTransition.Transition(
+            (t) => {
+                //
+                rtMainMenu.anchorMin = mainMenuAnchorMin - Vector2.right*t;
+                rtMainMenu.anchorMax = mainMenuAnchorMax - Vector2.right*t;
+            },
+            (complete) => {
+                if (!complete) return;
+                SceneManager.LoadScene("MinigameSelectionScene");
+            }
+        ));
     }
 
     public void OpenSettings() {
