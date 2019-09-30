@@ -7,6 +7,7 @@ public class MainMenuButtons : MonoBehaviour
     [SerializeField] private TransitionData _mainMenuEnterTransition = null;
     [SerializeField] private Transform _mainMenuTransform = null;
     [SerializeField] private Transform _settingsTransform = null;
+    [SerializeField] private Transform _creditsTransform = null;
     [SerializeField] private GameObject _ExitButton = null;
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,22 @@ public class MainMenuButtons : MonoBehaviour
             (t) => {
                 _mainMenuTransform.localScale = Vector2.one - Vector2.one * t ;
                 _settingsTransform.localScale = Vector2.one * t ;
+            },
+            (complete) => {
+                if (!complete) return;
+                
+                GameStateManager.INSTANCE.TriggerStateChange(GameState.INSCENE);
+            }
+        ));
+    }
+
+    public void OpenCredits() {
+        _creditsTransform.gameObject.SetActive(true);
+
+        StartCoroutine( _mainMenuEnterTransition.Transition(
+            (t) => {
+                _mainMenuTransform.localScale = Vector2.one - Vector2.one * t ;
+                _creditsTransform.localScale = Vector2.one * t ;
             },
             (complete) => {
                 if (!complete) return;
