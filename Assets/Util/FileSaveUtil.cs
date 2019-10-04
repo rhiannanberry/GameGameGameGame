@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 public static class FileSaveUtil
 {
     public static T LoadData<T>(string saveName) {
-        #if UNITY_WEBGL
+        #if !UNITY_STANDALONE && !UNITY_EDITOR
         return default(T);
         #endif
 
@@ -25,7 +25,7 @@ public static class FileSaveUtil
     }
 
     public static void SaveData<T>(string saveName, T data) {
-        #if UNITY_WEBGL
+        #if !UNITY_STANDALONE && !UNITY_EDITOR
         return;
         #endif
 

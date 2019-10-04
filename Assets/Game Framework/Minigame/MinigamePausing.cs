@@ -5,6 +5,9 @@ using UnityEngine;
 public class MinigamePausing : PauseBehaviour
 {
     [SerializeField] private GameObject _pauseCanvas = null;
+    [SerializeField] private TransitionData _mainMenuEnterTransition = null;
+    [SerializeField] private Transform _mainMenuTransform = null;
+    [SerializeField] private Transform _settingsTransform = null;
     private bool _paused = false;
 
     protected override void Start() {
@@ -41,5 +44,21 @@ public class MinigamePausing : PauseBehaviour
 
     public void ReturnToGame() {
         GameStateManager.INSTANCE.TriggerStateChange(GameState.INGAME);
+    }
+
+    public void OpenSettings() {
+        _settingsTransform.gameObject.SetActive(true);
+
+        StartCoroutine( _mainMenuEnterTransition.Transition(
+            (t) => {
+                _mainMenuTransform.localScale = Vector2.one - Vector2.one * t ;
+                _settingsTransform.localScale = Vector2.one * t ;
+            },
+            (complete) => {
+                if (!complete) return;
+                
+                GameStateManager.INSTANCE.TriggerStateChange(GameState.INSCENE);
+            }
+        ));
     }
 }
