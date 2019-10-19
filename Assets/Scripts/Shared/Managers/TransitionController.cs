@@ -5,17 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class TransitionController : MonoBehaviour
 {
-    public static int index;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    private static int? index;
+    private static string sceneName;
+
+    public static void CompleteExitToScene() {
+        if (index != null) {
+            SceneManager.LoadScene((int)index);
+        } else if (sceneName != null) {
+            SceneManager.LoadScene(sceneName);
+        } else {
+            Debug.LogWarning("Destination scene name and index do not exist.");
+        }
+        index = null;
+        sceneName = null;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public static void BeginExitToScene(string s) {
+        sceneName = s;
+        GameStateManager.INSTANCE.TriggerStateChange(GameState.EXITING);
     }
 
     public static void BeginExitToScene(int i) {
