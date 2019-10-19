@@ -13,6 +13,7 @@ public class MinigameSelectionPanel : MonoBehaviour
     [SerializeField] private TMP_Dropdown _authorDropdown = null;
 
     [SerializeField] private Transform _selectedContainer = null;
+    [SerializeField] private Button _goButton = null;
 
     private List<MinigameButton> _buttons;
     private Dictionary<string, bool> _authors;
@@ -28,7 +29,10 @@ public class MinigameSelectionPanel : MonoBehaviour
 
         _authorDropdown.AddOptions(authors);
         _authorDropdown.onValueChanged.AddListener((value) => _buttons.ForEach(b => b.FilterByAuthor(authors[value])));
-    
+    }
+
+    private void Update() {
+        _goButton.interactable = _selectedContainer.GetComponentsInChildren<Transform>().GetLength(0) > 1;
     }
 
     private void DestroyExampleButtons() {
@@ -48,5 +52,11 @@ public class MinigameSelectionPanel : MonoBehaviour
             }            
             _buttons.Add(mb);
         }
+    }
+
+    public void StartRun() {
+        List<Minigame> selected = _buttons.Where(x => x.Selected).Select(x => x.MiniGame).ToList();
+        PersistentDataManager.INSTANCE.CreateNewRun((new MinigameList(selected)).RandomReorder());
+        TransitionController.BeginExitToScene(PersistentDataManager.run.CurrentGame.SceneName);
     }
 }

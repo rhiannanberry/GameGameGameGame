@@ -14,7 +14,8 @@ public class MinigameButton : System.Object
     private string _filterAuthor, _filterTag = "All";
 
     public bool Selected {get {return _selected;}}
-    public MinigameButton(GameObject toggle, GameObject selectedButton, Minigame minigame, bool first=false) {
+    public Minigame MiniGame {get {return _minigame;}}
+    public MinigameButton(GameObject toggle, GameObject selectedButton, Minigame minigame) {
         _toggle = toggle.GetComponent<Toggle>();
         _selectedButton = selectedButton.GetComponent<Button>();
 
@@ -31,7 +32,10 @@ public class MinigameButton : System.Object
 
         _toggle.interactable = _minigame.GameWon;
         
-        _toggle.onValueChanged.AddListener((value) => _selectedButton.gameObject.SetActive(value));
+        _toggle.onValueChanged.AddListener((value) => {
+            _selectedButton.gameObject.SetActive(value);
+            _selected = value;
+            });
        
         _selectedButton.onClick.AddListener(() => _toggle.isOn = false);
 
