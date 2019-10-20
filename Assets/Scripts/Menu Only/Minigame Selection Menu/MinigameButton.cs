@@ -35,6 +35,7 @@ public class MinigameButton : System.Object
         _toggle.onValueChanged.AddListener((value) => {
             _selectedButton.gameObject.SetActive(value);
             _selected = value;
+            if (value) _selectedButton.transform.SetAsLastSibling();
             });
        
         _selectedButton.onClick.AddListener(() => _toggle.isOn = false);

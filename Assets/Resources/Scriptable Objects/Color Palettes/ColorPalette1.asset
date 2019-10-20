@@ -35,10 +35,10 @@ MonoBehaviour:
     color: {r: 0.04705883, g: 1, b: 0.96470594, a: 1}
     isDefault: 1
   - colorType: accent1
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0.04705883, g: 1, b: 0.96470594, a: 1}
     isDefault: 1
   - colorType: accent2
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 1, g: 0.04705882, b: 0.73385924, a: 1}
     isDefault: 1
   - colorType: accent3
     color: {r: 0, g: 0, b: 0, a: 1}

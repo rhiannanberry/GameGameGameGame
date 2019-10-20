@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Lives : MinigameBehaviour
+public class LivesBehaviour : MinigameBehaviour
 {
     [SerializeField] private GameObject _lifePrefab = null;
 
