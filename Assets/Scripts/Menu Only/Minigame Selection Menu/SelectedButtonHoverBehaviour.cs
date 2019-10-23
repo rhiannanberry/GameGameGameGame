@@ -11,9 +11,11 @@ public class SelectedButtonHoverBehaviour : MonoBehaviour, IPointerEnterHandler,
     private Button _button;
     private Color _color;
     [SerializeField] private TextMeshProUGUI _text = null;
+    public AudioClip clickSound;
     void Start()
     {
         _button = GetComponent<Button>();
+        _button.onClick.AddListener(() => SoundManager.INSTANCE.Play(clickSound));
         //_text.GetComponent<CanvasRenderer>().SetAlpha(0f);
         
     }
