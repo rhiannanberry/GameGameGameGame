@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b973329c78006ca77a5bf882518bc829, type: 3}
   m_Name: MovableData
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 100
   jumpSpeed: 5
   useAi: 0
