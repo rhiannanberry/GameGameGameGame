@@ -615,6 +615,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TransitionController
       objectReference: {fileID: 0}
+    - target: {fileID: 606875123868601940, guid: e36858e2f650076488d240acddfbda1a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 606875123868601942, guid: e36858e2f650076488d240acddfbda1a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2393,6 +2398,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Persistent Objects
+      objectReference: {fileID: 0}
+    - target: {fileID: 3371435518729477995, guid: 3a793800a07b2a44db78818f15464ccf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3371435518729477972, guid: 3a793800a07b2a44db78818f15464ccf,
         type: 3}
