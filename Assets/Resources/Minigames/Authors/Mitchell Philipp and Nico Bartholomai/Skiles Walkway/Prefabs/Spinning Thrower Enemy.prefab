@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 8264907952801000943}
   - component: {fileID: 8264907952801000942}
   - component: {fileID: 8264907952801000937}
+  - component: {fileID: 485553116637612945}
   m_Layer: 0
-  m_Name: Static Thrower Enemy
+  m_Name: Spinning Thrower Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,6 +72,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &485553116637612945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8264907952801000940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d8aa30c066ef277879acd406534132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8264907952885873002
 GameObject:
   m_ObjectHideFlags: 0
