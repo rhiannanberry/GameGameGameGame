@@ -52,7 +52,7 @@ public class GameStateManager : MonoBehaviour
     public void OnStateEnter(GameState enteringState) {
         _state = enteringState;
         _enterStateListeners.NotifyListeners(enteringState);
-        //Debug.Log("Entering: " + enteringState.ToString());
+        Debug.Log("Entering: " + enteringState.ToString());
     }
 
     public void OnStateExit(GameState exitingState) {
