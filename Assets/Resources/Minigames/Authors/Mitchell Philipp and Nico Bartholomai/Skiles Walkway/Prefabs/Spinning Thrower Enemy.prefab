@@ -49,8 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flyerPrefab: {fileID: 1005368226892572355, guid: f5c28ab359cf12099abbc589b6939709,
     type: 3}
-  throwInterval: 1.5
-  throwSpeed: 5
+  throwInterval: 1
+  throwSpeed: 7
 --- !u!50 &8264907952801000937
 Rigidbody2D:
   serializedVersion: 4
@@ -84,6 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00d8aa30c066ef277879acd406534132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spinSpeed: 90
 --- !u!1 &8264907952885873002
 GameObject:
   m_ObjectHideFlags: 0

@@ -165,7 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7d2140d3b6df31e97cc6e937ed7b70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spinSpeed: 5
+  strafeSpeed: 3
+  strafeRange: 2
 --- !u!1 &8264907952885873002
 GameObject:
   m_ObjectHideFlags: 0
