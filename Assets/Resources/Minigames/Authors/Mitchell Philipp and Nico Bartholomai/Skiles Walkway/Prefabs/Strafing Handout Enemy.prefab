@@ -393,4 +393,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strafeSpeed: 5
-  strafeRange: 15
+  strafeRange: 2
