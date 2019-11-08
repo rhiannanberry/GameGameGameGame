@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strafeSpeed: 3
-  strafeRange: 2
+  strafeRange: 2.5
 --- !u!1 &8264907952885873002
 GameObject:
   m_ObjectHideFlags: 0

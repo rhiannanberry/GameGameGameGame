@@ -49,7 +49,7 @@ MonoBehaviour:
   flyerPrefab: {fileID: 1005368226892572355, guid: f5c28ab359cf12099abbc589b6939709,
     type: 3}
   throwInterval: 1.5
-  throwSpeed: 7
+  throwSpeed: 5
 --- !u!50 &8264907952801000937
 Rigidbody2D:
   serializedVersion: 4

@@ -30,6 +30,13 @@ public class Enemy : MinigameBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D other) {
+        Debug.Log("Collid");
+        if (other.gameObject == player && running) {
+            PersistentDataManager.run.GameLost();
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
