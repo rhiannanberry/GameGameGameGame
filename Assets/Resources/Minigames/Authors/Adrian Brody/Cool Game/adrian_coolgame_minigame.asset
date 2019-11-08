@@ -18,3 +18,5 @@ MonoBehaviour:
   _scenePath: Assets/Minigames/Authors/Adrian Brody/Cool Game/adrian_coolgame_scene.unity
   _sceneName: adrian_coolgame_scene
   _timeLimit: 4
+  _scoreBased: 1
+  _scoreToWin: 10

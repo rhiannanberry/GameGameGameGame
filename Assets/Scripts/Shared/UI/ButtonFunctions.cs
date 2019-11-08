@@ -28,4 +28,8 @@ public class ButtonFunctions : MinigameBehaviour
     public void GameLost() {
         if (PersistentDataManager.run != null) PersistentDataManager.run.GameLost();
     }
+
+    public void IncreaseScore(int amt) {
+        if (PersistentDataManager.run != null) PersistentDataManager.run.CurrentGame.CurrentScore += amt;
+    }
 }

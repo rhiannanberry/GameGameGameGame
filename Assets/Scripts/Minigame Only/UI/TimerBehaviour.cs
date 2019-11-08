@@ -34,7 +34,7 @@ public class TimerBehaviour : MinigameBehaviour
         UpdateTimerUI();
         if (time == 0) {
             _timerActive = false;
-            PersistentDataManager.run.GameLost();
+            PersistentDataManager.run.TimeRanOut();
         }
         
     }

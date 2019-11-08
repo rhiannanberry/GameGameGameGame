@@ -15,6 +15,9 @@ public class Minigame : System.Object
     [SerializeField] private float _lowestWinTime;
     [SerializeField] private bool _gamePlayed;
     [SerializeField] private bool _gameWon;
+    [SerializeField] private bool _scoreBased = false;
+    [SerializeField] private int _scoreToWin;
+    [SerializeField] private int _currentScore = 0;
 
     // Getters
     public string Name {get {return _name; }}
@@ -26,11 +29,15 @@ public class Minigame : System.Object
     public bool GamePlayed {get {return _gamePlayed; }}
     public bool GameWon {get {return _gameWon; }}
 
+    public bool ScoreBased{ get {return _scoreBased; }}
+    public int ScoreToWin{ get {return _scoreToWin; }}
+    public int CurrentScore{ get{return _currentScore;} set{_currentScore = value;}}
+
 
     // Constructors
 
     // Full Constructor
-    public Minigame(string gameName, string description, string author, string sceneName, float timeLimit, float lowestWinTime, bool gamePlayed, bool gameWon) {
+    public Minigame(string gameName, string description, string author, string sceneName, float timeLimit, float lowestWinTime, bool gamePlayed, bool gameWon, bool scoreBased, int scoreToWin) {
         _name = gameName;
         _description = description;
         _author = author;
@@ -39,15 +46,21 @@ public class Minigame : System.Object
         _lowestWinTime = lowestWinTime;
         _gamePlayed = gamePlayed;
         _gameWon = gameWon;
+        _scoreBased = scoreBased;
+        _scoreToWin = _scoreToWin;
     }
 
     //New-save Constructor
-    public Minigame(string gameName, string description, string author, string sceneName, float timeLimit) : 
-        this(gameName, description, author, sceneName, timeLimit, -1, false, false) {
+    public Minigame(string gameName, string description, string author, string sceneName, float timeLimit, bool scoreBased, int scoreToWin) : 
+        this(gameName, description, author, sceneName, timeLimit, -1, false, false, scoreBased, scoreToWin) {
         }
 
 
     // Public Checking Functions
+
+    public bool ScoreMet() {
+        return (_scoreBased) && (_currentScore >= _scoreToWin);
+    }
 
     public bool IsUnderTimeLimit(float currentTime) {
         return currentTime <= _timeLimit;

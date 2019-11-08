@@ -13,8 +13,10 @@ public class MinigameScriptableObject : ScriptableObject
     [HideInInspector] public string _scenePath;
     [HideInInspector] public string _sceneName;
     public float _timeLimit;
+    public bool _scoreBased;
+    public int _scoreToWin;
 
     public Minigame ToObject() {
-        return new Minigame(_name, _description, _author, _sceneName, _timeLimit);
+        return new Minigame(_name, _description, _author, _sceneName, _timeLimit, _scoreBased, _scoreToWin);
     }
 }
