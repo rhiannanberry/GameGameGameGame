@@ -26,11 +26,21 @@ public class Run : System.Object
 
 
     //Public Methods
+
     public void GameWon() {
         float timeTaken = CurrentGame.TimeLimit - TimerBehaviour.time;
         bool isNewRecord = _runList.minigames[_minigameIndex].UpdateWinTime(timeTaken);
         gameWon = true;
         RunResult();
+    }
+
+    public void TimeRanOut() {
+        Minigame m = _runList.minigames[_minigameIndex];
+        if (m.ScoreBased && m.ScoreMet()) {
+            GameWon();
+        } else {
+            GameLost();
+        }
     }
 
     public void GameLost() {

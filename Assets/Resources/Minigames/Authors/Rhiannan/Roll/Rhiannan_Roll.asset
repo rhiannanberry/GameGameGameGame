@@ -18,3 +18,5 @@ MonoBehaviour:
   _scenePath: Assets/Resources/Minigames/Authors/Rhiannan/Roll/RollScene.unity
   _sceneName: RollScene
   _timeLimit: 10
+  _scoreBased: 1
+  _scoreToWin: 5
