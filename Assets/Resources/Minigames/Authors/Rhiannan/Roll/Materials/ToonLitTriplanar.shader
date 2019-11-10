@@ -27,7 +27,7 @@
 
         CGPROGRAM
 
-        #pragma surface surf Ramp vertex:vert fullforwardshadows addshadow
+        #pragma surface surf Ramp fullforwardshadows addshadow
 
         #pragma shader_feature _NORMALMAP
         #pragma shader_feature _OCCLUSIONMAP
@@ -91,32 +91,26 @@
 
         struct Input
         {
-            float3 localCoord;
-            float3 localNormal;
+            float3 worldPos;
+            float3 worldNormal;
         };
 
-        void vert(inout appdata_full v, out Input data)
-        {
-            UNITY_INITIALIZE_OUTPUT(Input, data);
-            data.localCoord = v.vertex.xyz;
-            data.localNormal = v.normal.xyz;
-        }
 
         void surf(Input IN, inout SurfaceOutputCustom o)
         {
             // Blending factor of triplanar mapping
-            float3 bf = normalize(abs(IN.localNormal));
+            float3 bf = normalize(abs(IN.worldNormal));
             bf /= dot(bf, (float3)1);
 
             // Triplanar mapping
-            float2 tx = IN.localCoord.yz * _MapScale;
-            float2 ty = IN.localCoord.zx * _MapScale;
-            float2 tz = IN.localCoord.xy * _MapScale;
+            float2 tx = IN.worldPos.yz * _MapScale;
+            float2 ty = IN.worldPos.zx * _MapScale;
+            float2 tz = IN.worldPos.xy * _MapScale;
 
             // Base color
-            half4 cx = tex2D(_ZTex, tx) * bf.x;
-            half4 cy = tex2D(_XTex, ty) * bf.y;
-            half4 cz = tex2D(_MainTex, tz) * bf.z;
+            half4 cx = tex2D(_XTex, tx) * bf.x;
+            half4 cy = tex2D(_MainTex, ty) * bf.y;
+            half4 cz = tex2D(_ZTex, tz) * bf.z;
             half4 color = (cx + cy + cz) * _Color;
             o.Albedo = color.rgb;
             o.Alpha = color.a;
