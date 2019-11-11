@@ -927,7 +927,7 @@ Canvas:
   m_GameObject: {fileID: 927427093}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1628170419}
   m_PlaneDistance: 2
   m_PixelPerfect: 0
@@ -2214,6 +2214,11 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.b
       value: 0.9056604
       objectReference: {fileID: 0}
+    - target: {fileID: 344567878599316917, guid: 9554c41206be9e145a801b172d8fd39b,
+        type: 3}
+      propertyPath: _styleManager
+      value: 
+      objectReference: {fileID: 2118359024}
     - target: {fileID: 398825889073402579, guid: 9554c41206be9e145a801b172d8fd39b,
         type: 3}
       propertyPath: m_Material
@@ -2224,11 +2229,6 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 344567878599316917, guid: 9554c41206be9e145a801b172d8fd39b,
-        type: 3}
-      propertyPath: _styleManager
-      value: 
-      objectReference: {fileID: 2118359024}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9554c41206be9e145a801b172d8fd39b, type: 3}
 --- !u!1001 &2155109023712043644
