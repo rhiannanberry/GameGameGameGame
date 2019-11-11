@@ -27,7 +27,7 @@ public class PlayerSettings : System.Object
     }
 
     public PlayerSettings() {
-        _masterVolume = _sfxVolume = _musicVolume = 1f;
+        _masterVolume = _sfxVolume = _musicVolume = 0.5f;
     }
 
     public PlayerSettings Copy() {

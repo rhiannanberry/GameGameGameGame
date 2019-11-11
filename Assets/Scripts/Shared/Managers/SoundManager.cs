@@ -18,6 +18,7 @@ public class SoundManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
+
     public void Play(AudioClip clip){
         SFXSource.clip = clip;
         SFXSource.Play();
@@ -26,6 +27,15 @@ public class SoundManager : MonoBehaviour
     public void PlayMusic(AudioClip clip) {
         MusicSource.clip = clip;
         MusicSource.Play();
+    }
+
+    public void UpdateVolume() {
+        float master = PersistentDataManager.playerSettings.MasterVolume;
+        float music = master * PersistentDataManager.playerSettings.MusicVolume;
+        float sfx = master * PersistentDataManager.playerSettings.SFXVolume;
+
+        SFXSource.volume = sfx;
+        MusicSource.volume = music;
     }
 }
 
