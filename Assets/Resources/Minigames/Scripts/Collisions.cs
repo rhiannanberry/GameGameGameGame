@@ -17,11 +17,11 @@ public class Collisions : MonoBehaviour
 
     [Tooltip("If no sources, the result will occur with all collisions")]
     public GameObject[] sources;
-    
-    void Start()
-    {
-        
-    }
+    public string[] tagSources;
+    public string[] nameSources;
+
+    [HideInInspector] public GameObject lastCollided;
+  
 
     void OnCollisionEnter2D(Collision2D col)
     {
@@ -52,10 +52,19 @@ public class Collisions : MonoBehaviour
     }
 
     bool ValidateCollision(GameObject colObj) {
-        return (sources.Length == 0 || Array.Find(sources, element => element == colObj));
+        bool bothEmpty = (sources.Length == 0 && tagSources.Length == 0 && nameSources.Length == 0);
+        bool objMatch = Array.Find(sources, element => element == colObj) != null;
+        bool tagMatch = Array.Find(tagSources, element => element == colObj.tag) != null;
+        bool nameMatch = Array.Find(nameSources, element => element == colObj.name) != null;
+        bool valid = bothEmpty || objMatch || tagMatch || nameMatch;
+        if (valid) lastCollided = colObj;
+        return valid;
     }
 
     void ExecuteCollisionResult(GameObject other) {
+        if (useCustom) {
+            customCollisionResults.Invoke();
+        }
         switch(collisionResult) {
             case Result.Win:
                 PersistentDataManager.run.GameWon();
@@ -67,9 +76,7 @@ public class Collisions : MonoBehaviour
                 //TODO: idk
             break;
         }
-        if (useCustom) {
-            customCollisionResults.Invoke();
-        }
+        
     }
 }
 

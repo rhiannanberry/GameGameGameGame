@@ -65,6 +65,7 @@ public class Run : System.Object
         return "RunOverScene";
     }
 
+
     public void ResetRun() {
         _lives = 3;
         _minigameIndex = 0;
@@ -73,6 +74,7 @@ public class Run : System.Object
     //Private Methods
 
     private void RunResult() {
+        CurrentGame.ResetScore();
         if ( _lives == 0 || !HasNextGame() ) {
             Debug.Log("RUN END");
         } else {

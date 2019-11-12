@@ -47,7 +47,7 @@ public class Minigame : System.Object
         _gamePlayed = gamePlayed;
         _gameWon = gameWon;
         _scoreBased = scoreBased;
-        _scoreToWin = _scoreToWin;
+        _scoreToWin = scoreToWin;
     }
 
     //New-save Constructor
@@ -90,6 +90,10 @@ public class Minigame : System.Object
             return true;
         }
         return false;
+    }
+
+    public void ResetScore() {
+        _currentScore = 0;
     }
 
     public void SetGamePlayed() {
