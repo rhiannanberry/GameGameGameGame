@@ -69,6 +69,7 @@ public class SettingsBehaviour : MonoBehaviour
 
     private void DontSave() {
         LoadValues();
+        SoundManager.INSTANCE.UpdateVolume();
         CloseSettings();
     }
 
@@ -105,13 +106,18 @@ public class SettingsBehaviour : MonoBehaviour
 
     private void MasterVolumeChange(float sliderValue) {
         PersistentDataManager.playerSettings.MasterVolume = sliderValue;
+        SoundManager.INSTANCE.UpdateVolume();
     }
 
     private void MusicVolumeChange(float sliderValue) {
         PersistentDataManager.playerSettings.MusicVolume = sliderValue;
+        SoundManager.INSTANCE.UpdateVolume();
+
     }
 
     private void SFXVolumeChange(float sliderValue) {
         PersistentDataManager.playerSettings.SFXVolume = sliderValue;
+        SoundManager.INSTANCE.UpdateVolume();
+
     }
 }

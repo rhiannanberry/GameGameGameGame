@@ -15,8 +15,9 @@ public class MinigameScriptableObject : ScriptableObject
     public float _timeLimit;
     public bool _scoreBased;
     public int _scoreToWin;
+    public bool _survival;
 
     public Minigame ToObject() {
-        return new Minigame(_name, _description, _author, _sceneName, _timeLimit, _scoreBased, _scoreToWin);
+        return new Minigame(_name, _description, _author, _sceneName, _timeLimit, _scoreBased, _scoreToWin, _survival);
     }
 }

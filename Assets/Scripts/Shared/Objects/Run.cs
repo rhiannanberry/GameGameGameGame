@@ -36,7 +36,11 @@ public class Run : System.Object
 
     public void TimeRanOut() {
         Minigame m = _runList.minigames[_minigameIndex];
-        if (m.ScoreBased && m.ScoreMet()) {
+        if (m.Survival == false && m.ScoreBased == false) {
+            GameLost();
+        } else if (m.ScoreBased && m.ScoreMet()) {
+            GameWon();
+        } else if (m.Survival) {
             GameWon();
         } else {
             GameLost();
@@ -65,6 +69,7 @@ public class Run : System.Object
         return "RunOverScene";
     }
 
+
     public void ResetRun() {
         _lives = 3;
         _minigameIndex = 0;
@@ -73,6 +78,7 @@ public class Run : System.Object
     //Private Methods
 
     private void RunResult() {
+        CurrentGame.ResetScore();
         if ( _lives == 0 || !HasNextGame() ) {
             Debug.Log("RUN END");
         } else {

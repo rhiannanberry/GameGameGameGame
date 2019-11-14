@@ -33,6 +33,10 @@ public class PersistentDataManager : MonoBehaviour
             }
         }
 
+        if (SoundManager.INSTANCE != null) {
+            SoundManager.INSTANCE.UpdateVolume();
+        }
+
 
         debug_playerSettings = playerSettings;
         debug_minigameMasterList = minigameMasterList;

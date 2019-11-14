@@ -16,6 +16,7 @@ public class Minigame : System.Object
     [SerializeField] private bool _gamePlayed;
     [SerializeField] private bool _gameWon;
     [SerializeField] private bool _scoreBased = false;
+    [SerializeField] private bool _survival = false;
     [SerializeField] private int _scoreToWin;
     [SerializeField] private int _currentScore = 0;
 
@@ -32,12 +33,13 @@ public class Minigame : System.Object
     public bool ScoreBased{ get {return _scoreBased; }}
     public int ScoreToWin{ get {return _scoreToWin; }}
     public int CurrentScore{ get{return _currentScore;} set{_currentScore = value;}}
+    public bool Survival{ get {return _survival; }}
 
 
     // Constructors
 
     // Full Constructor
-    public Minigame(string gameName, string description, string author, string sceneName, float timeLimit, float lowestWinTime, bool gamePlayed, bool gameWon, bool scoreBased, int scoreToWin) {
+    public Minigame(string gameName, string description, string author, string sceneName, float timeLimit, float lowestWinTime, bool gamePlayed, bool gameWon, bool scoreBased, int scoreToWin, bool survival) {
         _name = gameName;
         _description = description;
         _author = author;
@@ -47,12 +49,13 @@ public class Minigame : System.Object
         _gamePlayed = gamePlayed;
         _gameWon = gameWon;
         _scoreBased = scoreBased;
-        _scoreToWin = _scoreToWin;
+        _scoreToWin = scoreToWin;
+        _survival = survival;
     }
 
     //New-save Constructor
-    public Minigame(string gameName, string description, string author, string sceneName, float timeLimit, bool scoreBased, int scoreToWin) : 
-        this(gameName, description, author, sceneName, timeLimit, -1, false, false, scoreBased, scoreToWin) {
+    public Minigame(string gameName, string description, string author, string sceneName, float timeLimit, bool scoreBased, int scoreToWin, bool survival) : 
+        this(gameName, description, author, sceneName, timeLimit, -1, false, false, scoreBased, scoreToWin, survival) {
         }
 
 
@@ -90,6 +93,10 @@ public class Minigame : System.Object
             return true;
         }
         return false;
+    }
+
+    public void ResetScore() {
+        _currentScore = 0;
     }
 
     public void SetGamePlayed() {
