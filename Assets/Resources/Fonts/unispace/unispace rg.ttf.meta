@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 9a9f08d43d20b3b4a8de5c378cdd8442
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Unispace
+  fontNames:
+  - Unispace
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2923beb37c44ccc43aa76268408a2d8d, type: 3}
+  - {fileID: 12800000, guid: 16d11b9c5c5cfe5429f13e8231f1e0ca, type: 3}
+  - {fileID: 12800000, guid: 8c3a589f20d25554e8f8597115e97245, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

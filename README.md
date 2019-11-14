@@ -14,7 +14,7 @@
 # Creating a Minigame
 ### The process is subject to change, but here is the current workflow
 
-1. In the project explorer, go to `Assets/Minigames/Authors` and create a folder with your name. 
+1. In the project explorer, go to `Assets/Resources/Minigames/Authors` and create a folder with your name. 
 
    ![alt](ReadmeScreenshots/AuthorFolder.png)
 2. In your folder, create another folder with the title of your minigame.
@@ -38,15 +38,7 @@
 
    ![alt](ReadmeScreenshots/FillOutMinigame.png)
 
-8. Search for `PersistentDataManager` in the project window and select the prefab matching that name. Click the inspector button that says "Open Prefab".
-
-    ![alt](ReadmeScreenshots/FindPersistentDataManager.png)
-
-9. In the prefab, the script attached to the object should have a list of minigames called `Scriptable Object Minigames`. Increase its size by one, and replace the last index's value with your `author_title_minigame` asset, then exit the prefab.
-
-   ![alt](ReadmeScreenshots/UpdatePersistentDataManager.png)
-
-10. Next, locate the folder `Assets/Minigames/REQUIRED PREFABS`, and drag all of the prefabs into the scene hierarchy.
+8. Next, locate the folder `Assets/Resources/Minigames/REQUIRED PREFABS`, and drag all of the prefabs into the scene hierarchy.
 
    ![alt](ReadmeScreenshots/AddRequiredToScene.png)
 
