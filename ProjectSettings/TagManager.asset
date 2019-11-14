@@ -44,12 +44,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Background
     uniqueID: 1817415645
     locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
   - name: Foreground
     uniqueID: 1035925491
+    locked: 0
+  - name: UIParticles
+    uniqueID: 853936901
     locked: 0
