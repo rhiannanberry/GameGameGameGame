@@ -19,7 +19,7 @@ public class Minigame : System.Object
     [SerializeField] private bool _survival = false;
     [SerializeField] private int _scoreToWin;
     [SerializeField] private int _currentScore = 0;
-    [SerializeField] private AudioClip _backgroundMusic;
+
 
     // Getters
     public string Name {get {return _name; }}
@@ -36,13 +36,11 @@ public class Minigame : System.Object
     public int CurrentScore{ get{return _currentScore;} set{_currentScore = value;}}
     public bool Survival{ get {return _survival; }}
 
-    public AudioClip BackgroundMusic { get { return _backgroundMusic; } }
-
 
     // Constructors
 
     // Full Constructor
-    public Minigame(string gameName, string description, string author, string sceneName, float timeLimit, float lowestWinTime, bool gamePlayed, bool gameWon, bool scoreBased, int scoreToWin, bool survival, AudioClip backgroundMusic) {
+    public Minigame(string gameName, string description, string author, string sceneName, float timeLimit, float lowestWinTime, bool gamePlayed, bool gameWon, bool scoreBased, int scoreToWin, bool survival) {
         _name = gameName;
         _description = description;
         _author = author;
@@ -54,12 +52,11 @@ public class Minigame : System.Object
         _scoreBased = scoreBased;
         _scoreToWin = scoreToWin;
         _survival = survival;
-        _backgroundMusic = backgroundMusic;
     }
 
     //New-save Constructor
-    public Minigame(string gameName, string description, string author, string sceneName, float timeLimit, bool scoreBased, int scoreToWin, bool survival, AudioClip backgroundMusic) : 
-        this(gameName, description, author, sceneName, timeLimit, -1, false, false, scoreBased, scoreToWin, survival, backgroundMusic) {
+    public Minigame(string gameName, string description, string author, string sceneName, float timeLimit, bool scoreBased, int scoreToWin, bool survival) : 
+        this(gameName, description, author, sceneName, timeLimit, -1, false, false, scoreBased, scoreToWin, survival) {
         }
 
 

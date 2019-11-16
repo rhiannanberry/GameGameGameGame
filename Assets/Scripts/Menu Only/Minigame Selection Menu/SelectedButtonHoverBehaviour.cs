@@ -15,7 +15,8 @@ public class SelectedButtonHoverBehaviour : MonoBehaviour, IPointerEnterHandler,
     void Start()
     {
         _button = GetComponent<Button>();
-        _button.onClick.AddListener(() => SoundManager.INSTANCE.Play(clickSound));
+        // TODO: Figure dis out
+        //_button.onClick.AddListener(() => SoundManager.INSTANCE.Play(clickSound));
         //_text.GetComponent<CanvasRenderer>().SetAlpha(0f);
         
     }

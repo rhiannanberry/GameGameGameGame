@@ -33,8 +33,8 @@ public class PersistentDataManager : MonoBehaviour
             }
         }
 
-        if (SoundManager.INSTANCE != null) {
-            SoundManager.INSTANCE.UpdateVolume();
+        if (MusicManager.INSTANCE != null) {
+            MusicManager.INSTANCE.UpdateVolume();
         }
 
 

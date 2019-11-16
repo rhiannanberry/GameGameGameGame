@@ -16,9 +16,8 @@ public class MinigameScriptableObject : ScriptableObject
     public int _scoreToWin;
     public bool _survival;
 
-    public AudioClip _backgroundMusic;
 
     public Minigame ToObject() {
-        return new Minigame(_name, _description, _author, _sceneName, _timeLimit, _scoreBased, _scoreToWin, _survival, _backgroundMusic);
+        return new Minigame(_name, _description, _author, _sceneName, _timeLimit, _scoreBased, _scoreToWin, _survival);
     }
 }

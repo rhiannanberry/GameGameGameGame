@@ -1,27 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class SoundManager : MonoBehaviour
 {
-    public AudioSource SFXSource;
+    public AudioSource[] SFXSources;
+
+    public AudioClip MainMusic, CustomMusic;
     public AudioSource MusicSource;
+    public AudioSource MusicSourceSecondary;
 
     public static SoundManager INSTANCE = null;
 
     private void Awake() {
+        GameObject[] gos = GameObject.FindGameObjectsWithTag("SFX");
+        SFXSources = new AudioSource[gos.Length];
+        for (int i = 0; i <gos.Length; i++ ) {
+            SFXSources[i] = gos[i].GetComponent<AudioSource>();
+        }
+
         if (INSTANCE == null) {
             INSTANCE = this;
         } else if (INSTANCE != this) {
+            INSTANCE.SFXSources = SFXSources;
             Destroy(gameObject);
         }
 
         DontDestroyOnLoad(gameObject);
     }
 
-    public void Play(AudioClip clip){
-        SFXSource.clip = clip;
-        SFXSource.Play();
+    public void PlaySound(AudioSource aus) {
+        if (Array.Exists(SFXSources, e => e == aus)) {
+            aus.Play();
+        }
     }
 
     public void PlayMusic(AudioClip clip) {
@@ -34,7 +46,10 @@ public class SoundManager : MonoBehaviour
         float music = master * PersistentDataManager.playerSettings.MusicVolume;
         float sfx = master * PersistentDataManager.playerSettings.SFXVolume;
 
-        SFXSource.volume = sfx;
+        foreach (AudioSource s in SFXSources) {
+            s.volume = sfx;
+        }
+
         MusicSource.volume = music;
     }
 }
