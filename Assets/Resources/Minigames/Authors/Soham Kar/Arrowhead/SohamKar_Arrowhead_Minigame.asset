@@ -15,7 +15,6 @@ MonoBehaviour:
   _name: Arrowhead
   _description: Guide the arrow using the cursor and avoid the obstacles!
   _author: Soham Kar
-  _scenePath: Assets/Resources/Minigames/Authors/Soham Kar/Arrowhead/SohamKar_Arrowhead_Scene.unity
   _sceneName: SohamKar_Arrowhead_Scene
   _timeLimit: 20
   _scoreBased: 0

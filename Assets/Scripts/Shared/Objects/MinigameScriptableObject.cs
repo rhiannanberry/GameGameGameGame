@@ -10,14 +10,15 @@ public class MinigameScriptableObject : ScriptableObject
     public string _name;
     [TextArea] public string _description;
     public string _author;
-    [HideInInspector] public string _scenePath;
-    [HideInInspector] public string _sceneName;
+    [Scene] public string _sceneName;
     public float _timeLimit;
     public bool _scoreBased;
     public int _scoreToWin;
     public bool _survival;
 
+    public AudioClip _backgroundMusic;
+
     public Minigame ToObject() {
-        return new Minigame(_name, _description, _author, _sceneName, _timeLimit, _scoreBased, _scoreToWin, _survival);
+        return new Minigame(_name, _description, _author, _sceneName, _timeLimit, _scoreBased, _scoreToWin, _survival, _backgroundMusic);
     }
 }

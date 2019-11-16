@@ -15,8 +15,8 @@ MonoBehaviour:
   _name: Sphere Tilter
   _description: Get the sphere to the exit by using the arrow keys to tilt the board!
   _author: Soham Kar
-  _scenePath: Assets/Resources/Minigames/Authors/Soham Kar/Sphere Tilter/SohamKar_SphereTilter_Scene.unity
   _sceneName: SohamKar_SphereTilter_Scene
   _timeLimit: 50
   _scoreBased: 0
   _scoreToWin: 0
+  _survival: 0

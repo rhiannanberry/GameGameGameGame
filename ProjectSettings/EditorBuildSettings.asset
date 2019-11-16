@@ -39,4 +39,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Resources/Minigames/Authors/Vinnie Davies/RoaringWheels/RoaringWheels_scene.unity
     guid: 0a0d2f102f61a824c846bb51c142e5df
+  - enabled: 1
+    path: Assets/Resources/Minigames/Authors/Soham Kar/Arrowhead/SohamKar_Arrowhead_Scene.unity
+    guid: 027208da00aadb54d84e18f64fb17200
+  - enabled: 1
+    path: Assets/Resources/Minigames/Authors/Soham Kar/Sphere Tilter/SohamKar_SphereTilter_Scene.unity
+    guid: a228a2420d0af42469a741177c9dced3
   m_configObjects: {}
