@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-[CreateAssetMenu(fileName = "Transition Data", menuName = "ScriptableObjects/Transition Data", order = 2)]
+[CreateAssetMenu(fileName = "Transition Data", menuName = "Scriptable Objects/Transition Data", order = 2)]
 public class TransitionData : ScriptableObject
 {
     [SerializeField] private Ease easingType = Ease.LINEAR;

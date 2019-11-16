@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 using static GameState;
 
@@ -13,6 +12,7 @@ public class GameStateManager : MonoBehaviour
 
     private Animator _animator;
 
+    public string STATE {get { return _state.ToString(); }}
 
     public static GameStateManager INSTANCE;
 
@@ -31,6 +31,24 @@ public class GameStateManager : MonoBehaviour
 
     private void Start() {
         _animator = GetComponent<Animator>();
+    }
+
+    public void OnDrawGizmos() {
+        string s = EditorApplication.isPlayingOrWillChangePlaymode ? STATE : "NONE";
+        UnityEditor.Handles.BeginGUI();
+        GUI.color = Color.white;
+        
+        GUIContent label = new GUIContent("GameState: ");
+        GUIContent st = new GUIContent(s);
+
+        Vector2 labelSize = GUI.skin.label.CalcSize(label);
+        Vector2 stSize = GUI.skin.label.CalcSize(st);
+
+        GUI.Label(new Rect(5,5,labelSize.x, labelSize.y), "GameState: ");
+        GUI.Label(new Rect(10+labelSize.x,5,stSize.x, stSize.y), s);
+        //Vector2 size = GUI.skin.label.CalcSize(new GUIContent("ssttst hshd"));
+        //GUI.Label(new Rect(0,0,size.x,size.y), "kdkdkd");
+        UnityEditor.Handles.EndGUI();
     }
 
     public void StartListeningStateEnter(GameState s, Action a) {
@@ -52,7 +70,6 @@ public class GameStateManager : MonoBehaviour
     public void OnStateEnter(GameState enteringState) {
         _state = enteringState;
         _enterStateListeners.NotifyListeners(enteringState);
-        Debug.Log("Entering: " + enteringState.ToString());
     }
 
     public void OnStateExit(GameState exitingState) {

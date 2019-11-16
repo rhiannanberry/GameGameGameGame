@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2513235779704384106}
   - component: {fileID: 4490091505974423321}
   m_Layer: 0
-  m_Name: MusicManagerPrefab
+  m_Name: Music Manager Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

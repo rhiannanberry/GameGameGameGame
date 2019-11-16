@@ -15,8 +15,8 @@ MonoBehaviour:
   _name: GOLF YOU
   _description: WASD to golf yourself!
   _author: Rhiannan Berry
-  _scenePath: Assets/Resources/Minigames/Authors/Rhiannan/Roll/RollScene.unity
-  _sceneName: RollScene
+  _sceneName: rhiannan_RollScene
   _timeLimit: 10
   _scoreBased: 1
   _scoreToWin: 5
+  _survival: 0
