@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c684674b01f71dc4a85b85a765decfac, type: 3}
+  m_Name: RoaringWheels_SO
+  m_EditorClassIdentifier: 
+  _name: Roaring Wheels
+  _description: The more noise you make the faster you go! Try to make it over the
+    gap before time is up.
+  _author: Vinnie Davies
+  _scenePath: Assets/Resources/Minigames/Authors/Vinnie Davies/RoaringWheels/RoaringWheels_scene.unity
+  _sceneName: RoaringWheels_scene
+  _timeLimit: 25
