@@ -12,6 +12,7 @@ public class StaticThrowerEnemy : MinigameBehaviour
 
     public float throwInterval = 3;
     public float throwSpeed = 3;
+    public string throwSoundName = "throw";
     float throwTimer;
     // Start is called before the first frame update
     protected override void Start()
@@ -57,6 +58,7 @@ public class StaticThrowerEnemy : MinigameBehaviour
                 float rotationDegrees = transform.rotation.eulerAngles.z - 90;
                 float rotationRadians = rotationDegrees * (float)Math.PI / 180;
                 GameObject newFlyer = Instantiate(flyerPrefab, transform.position + new Vector3((float)Math.Cos(rotationRadians), (float)Math.Sin(rotationRadians)), transform.rotation);
+                SoundManager._PlaySound(throwSoundName);
                 newFlyer.GetComponent<ThrownFlyer>().speed = throwSpeed;
             }
         }

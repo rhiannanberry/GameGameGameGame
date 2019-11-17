@@ -17,30 +17,22 @@ public class Movement : MonoBehaviour
     {
         if (Microphone.devices.Length > 0)
         {
-            microphoneInput = Microphone.Start(null, true, 999, 44100);
+            microphoneInput = Microphone.Start(Microphone.devices[1], true, 999, 44100);
             microphoneInitialized = true;
+            foreach (var mic in Microphone.devices) {
+                print(mic);
+            }
         }
+
+        
     }
 
-    private void OnCollisionEnter(Collision target)
-    {
-        print(target.gameObject.name);
-        if(target.gameObject.tag.Equals("GameState") == true)
-        {
-            PersistentDataManager.RUN.GameWon();
-        }
-    }
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
     {
         noise = LevelMax();
+        print(noise);
         if (isTouching)
         {
             speed = Mathf.Lerp(speed, 0, Time.deltaTime);

@@ -2,38 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mover : MinigameBehaviour
+public class Mover : MonoBehaviour
 {
 	public float speed;
+	[HideInInspector] public GameController gc;
 	private Rigidbody2D rb;
 
 	private float _time = 0f;
 
 	private bool inMinigame = false;
 
-	protected override void Start ()
+	private void Start ()
 	{
-		base.Start();
 		rb = gameObject.GetComponent<Rigidbody2D>();
-		OnStateEnter();
-		
 	}
 
-	protected override void OnStateEnter() {
-		inMinigame = true;
+	private void OnStateEnter() {
 		rb.velocity = transform.up * speed;
         rb.constraints = RigidbodyConstraints2D.None;
     }
 
-    protected override void OnStateExit() {
-		inMinigame = false;
+    	private void OnStateExit() {
 		rb.velocity = Vector2.zero;
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
 	private void Update() {
-		if (!inMinigame) return;
-		_time += Time.deltaTime;
-		if (_time >= 5f) Destroy(gameObject);
+		if (gc.inMinigame && !inMinigame) {
+			inMinigame = true;
+			OnStateEnter();
+
+		} else if (!gc.inMinigame && inMinigame) {
+			inMinigame = false;
+			OnStateExit();
+		}
+		if (inMinigame) {
+			_time += Time.deltaTime;
+			if (_time >= 5f) Destroy(gameObject);
+		}
 	}
 }
