@@ -9,7 +9,7 @@ public class MainMenuButtonsBehaviour : MonoBehaviour
     [SerializeField] private Transform _mainMenuTransform = null;
     [SerializeField] private Transform _settingsTransform = null;
     [SerializeField] private Transform _creditsTransform = null;
-    [SerializeField] private GameObject _ExitButton = null;
+    //[SerializeField] private GameObject _ExitButton = null;
     // Start is called before the first frame update
     void Start()
     {

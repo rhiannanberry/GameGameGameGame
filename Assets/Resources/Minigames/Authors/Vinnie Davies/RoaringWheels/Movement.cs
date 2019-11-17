@@ -27,7 +27,7 @@ public class Movement : MonoBehaviour
         print(target.gameObject.name);
         if(target.gameObject.tag.Equals("GameState") == true)
         {
-            if (PersistentDataManager.run != null) PersistentDataManager.run.GameWon();
+            PersistentDataManager.RUN.GameWon();
         }
     }
     

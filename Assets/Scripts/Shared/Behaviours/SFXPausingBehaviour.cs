@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicEnteringBehaviour : EnteringBehaviour
+public class SFXPausingBehaviour : PauseBehaviour
 {
     protected override void OnStateEnter() {
-        MusicManager.INSTANCE.CheckTransition();
+        SoundManager._PauseAll();
     }
 
     protected override void OnStateExit() {
+        SoundManager._UnPauseAll();
     }
 }

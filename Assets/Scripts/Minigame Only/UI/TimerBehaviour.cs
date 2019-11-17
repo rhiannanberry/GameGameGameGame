@@ -13,7 +13,7 @@ public class TimerBehaviour : MinigameBehaviour
     protected override void Start() {
         base.Start();
         _timerUI = GetComponent<TextMeshProUGUI>();
-        time = PersistentDataManager.run.CurrentGame.TimeLimit;
+        time = PersistentDataManager.RUN.CurrentGame.TimeLimit;
         UpdateTimerUI();
     }
 
@@ -34,7 +34,7 @@ public class TimerBehaviour : MinigameBehaviour
         UpdateTimerUI();
         if (time == 0) {
             _timerActive = false;
-            PersistentDataManager.run.TimeRanOut();
+            PersistentDataManager.RUN.TimeRanOut();
         }
         
     }

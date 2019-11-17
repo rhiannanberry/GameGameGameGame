@@ -10,7 +10,7 @@ public class Strafer : MinigameBehaviour
     Vector3 startPos;
     static bool running = false;
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         base.Start();
         startPos = transform.position;    

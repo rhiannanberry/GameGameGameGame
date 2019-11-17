@@ -38,7 +38,7 @@ public class BoxLid : MinigameBehaviour
             transform.position += new Vector3(0, upSpeed,0);
         }
         if (transform.position.y >= startPos.y + moveDist) {
-            PersistentDataManager.run.GameWon();
+            PersistentDataManager.RUN.GameWon();
             _canInput = false;
         }
         

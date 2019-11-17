@@ -10,7 +10,7 @@ public class Enemy : MinigameBehaviour
     GameObject player;
     
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         base.Start();
         player = GameObject.Find("Player");
@@ -26,14 +26,14 @@ public class Enemy : MinigameBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject == player && running) {
-            PersistentDataManager.run.GameLost();
+            PersistentDataManager.RUN.GameLost();
         }
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
         Debug.Log("Collid");
         if (other.gameObject == player && running) {
-            PersistentDataManager.run.GameLost();
+            PersistentDataManager.RUN.GameLost();
         }
     }
 

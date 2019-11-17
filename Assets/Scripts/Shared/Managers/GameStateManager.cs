@@ -33,6 +33,7 @@ public class GameStateManager : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
+    #if UNITY_EDITOR
     public void OnDrawGizmos() {
         string s = EditorApplication.isPlayingOrWillChangePlaymode ? STATE : "NONE";
         UnityEditor.Handles.BeginGUI();
@@ -50,6 +51,7 @@ public class GameStateManager : MonoBehaviour
         //GUI.Label(new Rect(0,0,size.x,size.y), "kdkdkd");
         UnityEditor.Handles.EndGUI();
     }
+    #endif
 
     public void StartListeningStateEnter(GameState s, Action a) {
         _enterStateListeners.AddListener(s, a);

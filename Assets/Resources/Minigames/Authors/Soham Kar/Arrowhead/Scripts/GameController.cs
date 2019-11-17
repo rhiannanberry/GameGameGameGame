@@ -18,7 +18,7 @@ public class GameController : MinigameBehaviour
 	public float treeStartWait;
 	public float treeSpawnWait;
 
-	private float timer = 0;
+	//private float timer = 0;
 	private bool inMinigame = false;
 	private IEnumerator waves, wavesTrees;
 

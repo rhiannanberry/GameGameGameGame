@@ -5,9 +5,9 @@ using UnityEngine;
 public class Eye : MonoBehaviour {
     Material m;
     [Header("Look")]
-    [SerializeField] private AnimationCurve lookCurve;
+    [SerializeField] private AnimationCurve lookCurve = null;
     [SerializeField] private float lookDuration = 0.3f;
-    [SerializeField] private float lookSpeed = 5;
+    //[SerializeField] private float lookSpeed = 5;
     [SerializeField] private float lookMin = 0.2f;
     [SerializeField] private float lookMax = 0.8f;
     [SerializeField] private float lookWaitMin = 0.5f;
@@ -16,7 +16,7 @@ public class Eye : MonoBehaviour {
     private bool movingLook;
 
     [Header("Blink")]
-    [SerializeField] private AnimationCurve blinkCurve;
+    [SerializeField] private AnimationCurve blinkCurve = null;
     [SerializeField] private float blinkDuration = 0.3f;
     [SerializeField] private float blinkWaitMin = 0.3f;
     [SerializeField] private float blinkWaitMax = 2.5f;
@@ -24,9 +24,9 @@ public class Eye : MonoBehaviour {
     private bool blinking;
 
     [Header("Float")]
-    [SerializeField] private Vector3 moveAmount;
+    [SerializeField] private Vector3 moveAmount = Vector3.zero;
     private Vector3 offset;
-    [SerializeField] private Vector3 rotateAmount;
+    [SerializeField] private Vector3 rotateAmount = Vector3.zero;
     Vector3 startPos;
     Vector3 startRot;
 

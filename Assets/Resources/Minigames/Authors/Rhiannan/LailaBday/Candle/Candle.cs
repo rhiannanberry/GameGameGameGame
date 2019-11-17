@@ -39,6 +39,6 @@ public class Candle : MinigameBehaviour
 
     private void CheckWin() {
         if (numCandles == 0)
-            PersistentDataManager.run.GameWon();
+            PersistentDataManager.RUN.GameWon();
     }
 }

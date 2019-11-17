@@ -15,7 +15,8 @@ public class Move2DSideViewPhysics : Movable
     private Vector2 moveDirection;
     private Rigidbody2D rb;
 
-    void Start() {
+    protected override void Start() {
+        base.Start();
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 1;
     }
