@@ -36,7 +36,7 @@ public class Eye : MonoBehaviour {
         blinkTimer = Random.Range(blinkWaitMin, blinkWaitMax);
         m = GetComponent<Renderer>().material;
         m.SetFloat("_EyelidBlink", blinkCurve.Evaluate(0));
-        startPos = transform.position;
+        startPos = transform.localPosition;
         startRot = transform.localEulerAngles;
         offset = new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), Random.Range(-10, 10));
     }
@@ -57,13 +57,13 @@ public class Eye : MonoBehaviour {
             }
             blinkTimer = Random.Range(blinkWaitMin, blinkWaitMax);
         }
-        transform.position = startPos + new Vector3(
+        transform.localPosition = startPos + new Vector3(
             moveAmount.x * Mathf.Sin(Time.timeSinceLevelLoad + offset.x),
             moveAmount.y * Mathf.Cos(Time.timeSinceLevelLoad + offset.y),
             moveAmount.z * Mathf.Sin(Time.timeSinceLevelLoad + offset.z));
         transform.localEulerAngles = startRot + new Vector3(
-            rotateAmount.x * Mathf.Sin(Time.timeSinceLevelLoad + offset.x), 
-            rotateAmount.y * Mathf.Cos(Time.timeSinceLevelLoad + offset.y), 
+            rotateAmount.x * Mathf.Sin(Time.timeSinceLevelLoad + offset.x),
+            rotateAmount.y * Mathf.Cos(Time.timeSinceLevelLoad + offset.y),
             rotateAmount.z * Mathf.Sin(Time.timeSinceLevelLoad + offset.z));
     }
 

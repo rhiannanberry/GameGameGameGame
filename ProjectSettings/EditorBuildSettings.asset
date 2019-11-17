@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Resources/Scenes/MENU_Main.unity
     guid: 0cb6cd2684997d4468480b36200fdeb7
   - enabled: 1
+    path: Assets/Resources/Scenes/john_Mechorate.unity
+    guid: 6310fefdbc6304242a18ac3fc27ce744
+  - enabled: 1
     path: Assets/Resources/Scenes/rhiannan_LailaBdayVisit.unity
     guid: 835cb4135fee2cccd81f28d7095457b4
   - enabled: 1
