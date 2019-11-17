@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rt: {fileID: 606875123410981684}
-  _transitionData: {fileID: 11400000, guid: c2618b9cebac03848a0f44a8bc88158e, type: 2}
+  _transitionData: {fileID: 11400000, guid: 4fa45b40d8b104b4b840bc09182fc0ef, type: 2}
 --- !u!1 &606875124751322659
 GameObject:
   m_ObjectHideFlags: 0

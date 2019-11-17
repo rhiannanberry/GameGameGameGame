@@ -48,17 +48,8 @@ public class MinigamePausing : PauseBehaviour
 
     public void OpenSettings() {
         _settingsTransform.gameObject.SetActive(true);
-
-        StartCoroutine( _mainMenuEnterTransition.Transition(
-            (t) => {
-                _mainMenuTransform.localScale = Vector2.one - Vector2.one * t ;
-                _settingsTransform.localScale = Vector2.one * t ;
-            },
-            (complete) => {
-                if (!complete) return;
-                
-                GameStateManager.INSTANCE.TriggerStateChange(GameState.INSCENE);
-            }
-        ));
+        StartCoroutine(_mainMenuEnterTransition.StartTransitionScale(_mainMenuTransform.GetComponent<RectTransform>(), false, complete => {}));
+        StartCoroutine(_mainMenuEnterTransition.StartTransitionScale(_settingsTransform.GetComponent<RectTransform>(), true, complete => {}));
     }
+    
 }

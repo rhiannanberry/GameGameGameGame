@@ -5,21 +5,17 @@ using UnityEngine.UI;
 
 public class ExitingSelectionMenu : ExitingBehaviour
 {
-    [SerializeField] private RectTransform _rt = null;
-    [SerializeField] private TransitionData _transitionData = null;
-
+    public float _exitTime = 1.5f;
+   
     protected override void OnStateEnter() {
-        _rt.gameObject.GetComponent<Image>().enabled = true;
-        StartCoroutine( _transitionData.Transition( 
-            (t) => {
-                _rt.anchorMin = new Vector2( _rt.anchorMin.x,   1 - t );
-            },
-            (complete) => {
-                if (complete) TransitionController.CompleteExitToScene();
-            }));
+        StartCoroutine(EXIT());
     }
 
-    protected override void OnStateExit() {
+    protected override void OnStateExit() {}
 
+    IEnumerator EXIT() {
+        yield return new WaitForSeconds(_exitTime);
+        SceneLoader._CompleteExitToScene();
     }
+
 }

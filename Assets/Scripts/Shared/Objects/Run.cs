@@ -9,6 +9,7 @@ public class Run : System.Object
     [SerializeField] private int _runLength;
     [SerializeField] private int _minigameIndex;
     [SerializeField] private int _lives;
+    private bool runOver = false;
     [HideInInspector] public bool gameWon = false;
     [HideInInspector] public bool exitEarly = false;
 
@@ -59,14 +60,14 @@ public class Run : System.Object
     }
 
     public string NextScene() {
-        if (exitEarly) {
-            return "RunOverScene";
+        if (exitEarly || runOver) {
+            return PersistentDataManager.INSTANCE.runOverScene;
         }
         if (HasNextGame()) {
             _minigameIndex += 1;
             return _runList.minigames[_minigameIndex].SceneName;
         }
-        return "RunOverScene";
+        return PersistentDataManager.INSTANCE.runOverScene;
     }
 
 
@@ -81,6 +82,7 @@ public class Run : System.Object
         CurrentGame.ResetScore();
         if ( _lives == 0 || !HasNextGame() ) {
             Debug.Log("RUN END");
+            runOver = true;
         } else {
             Debug.Log("RUN CONTINUE");
         }

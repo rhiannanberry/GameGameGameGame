@@ -11,6 +11,6 @@ public class ChangeSceneButtonBehaviour : MonoBehaviour
 
     private void Start() {
         Button b = GetComponent<Button>();
-        b.onClick.AddListener(() => TransitionController.BeginExitToScene(destination));
+        b.onClick.AddListener(() => SceneLoader._BeginExitToScene(destination));
     }
 }

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66ff0c04895a3874c85d66d3a65d7c78, type: 3}
-  m_Name: MinigameEnteringDetails
+  m_Name: GAME_exiting_transition
   m_EditorClassIdentifier: 
   easingType: 4
   customEasingCurve:
@@ -19,40 +19,31 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 3.3333333
-      outSlope: 3.3333333
-      tangentMode: 34
+      inSlope: 0.00027449528
+      outSlope: 0.00027449528
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
+      outWeight: 0.8360803
     - serializedVersion: 3
-      time: 0.3
-      value: 1
-      inSlope: 0.14117652
-      outSlope: 0.14117652
-      tangentMode: 0
+      time: 0.8
+      value: 0
+      inSlope: -0.00015049306
+      outSlope: 5.4211817
+      tangentMode: 1
       weightedMode: 0
-      inWeight: 0.6111111
-      outWeight: 0.852459
-    - serializedVersion: 3
-      time: 0.7
-      value: 1.0235294
-      inSlope: 0.077508464
-      outSlope: 0.077508464
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.39583328
-      outWeight: 0.70833343
+      inWeight: 1
+      outWeight: 0.104166575
     - serializedVersion: 3
       time: 1
-      value: 2
-      inSlope: 3.254902
-      outSlope: 3.254902
-      tangentMode: 34
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  transitionLength: 4
+  transitionLength: 3

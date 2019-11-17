@@ -32,7 +32,7 @@ public class RunOverExiting : ExitingBehaviour
             (complete) => {
                 if (!complete) return;
                 PersistentDataManager.run = null;
-                SceneManager.LoadScene("Main Menu Scene");
+                SceneLoader._LoadMainMenuScene();
             }
         ));
         yield return null;
@@ -48,7 +48,7 @@ public class RunOverExiting : ExitingBehaviour
             (complete) => {
                 if (!complete) return;
                 PersistentDataManager.run.ResetRun();
-                SceneManager.LoadScene(PersistentDataManager.run.CurrentScene());
+                SceneLoader._LoadScene(PersistentDataManager.run.CurrentScene());
             }
         ));
         yield return null;

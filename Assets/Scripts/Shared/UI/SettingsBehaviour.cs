@@ -69,7 +69,7 @@ public class SettingsBehaviour : MonoBehaviour
 
     private void DontSave() {
         LoadValues();
-        SoundManager.INSTANCE.UpdateVolume();
+        MusicManager.INSTANCE.UpdateVolume();
         CloseSettings();
     }
 
@@ -78,17 +78,17 @@ public class SettingsBehaviour : MonoBehaviour
 
         _parentMenu.gameObject.SetActive(true);
 
-        StartCoroutine( _menuTransition.Transition(
-            (t) => {
-                GetComponent<RectTransform>().localScale = Vector2.one - Vector2.one * t ;
-                _parentMenu.localScale = Vector2.one * t ;
-            },
-            (complete) => {
-                if (!complete) return;
-                _back.interactable = true;
-                gameObject.SetActive(false);
-            }
-        ));
+        StartCoroutine(_menuTransition.StartTransitionScale(GetComponent<RectTransform>(), false, 
+            complete => {
+                if (complete) {
+                    _back.interactable = true;
+                    gameObject.SetActive(false);
+                }
+        }));
+
+        StartCoroutine(_menuTransition.StartTransitionScale(_parentMenu, true, complete => {}));
+
+        
         
     }
 

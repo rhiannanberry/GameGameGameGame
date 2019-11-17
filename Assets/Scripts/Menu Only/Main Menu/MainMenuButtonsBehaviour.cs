@@ -20,55 +20,28 @@ public class MainMenuButtonsBehaviour : MonoBehaviour
         _settingsTransform.gameObject.SetActive(false);
     }
 
-    public void OpenCustomPlay() {
-        RectTransform rtMainMenu = _mainMenuTransform.GetComponent<RectTransform>();
-       
-        Vector2 mainMenuAnchorMin = rtMainMenu.anchorMin;
-        Vector2 mainMenuAnchorMax = rtMainMenu.anchorMax;
+    public void OpenQuickPlay() {
+        ExitingMainMenu.StartNewQuickplayRun();
+    }
 
-        StartCoroutine( _mainMenuEnterTransition.Transition(
-            (t) => {
-                //
-                rtMainMenu.anchorMin = mainMenuAnchorMin - Vector2.right*t;
-                rtMainMenu.anchorMax = mainMenuAnchorMax - Vector2.right*t;
-            },
-            (complete) => {
-                if (!complete) return;
-                SceneManager.LoadScene("MinigameSelectionScene");
-            }
-        ));
+    public void OpenCustomPlay() {
+        ExitingMainMenu.GotoCustomPlay();
     }
 
     public void OpenSettings() {
         _settingsTransform.gameObject.SetActive(true);
-
-        StartCoroutine( _mainMenuEnterTransition.Transition(
-            (t) => {
-                _mainMenuTransform.localScale = Vector2.one - Vector2.one * t ;
-                _settingsTransform.localScale = Vector2.one * t ;
-            },
-            (complete) => {
-                if (!complete) return;
-                
-                GameStateManager.INSTANCE.TriggerStateChange(GameState.INSCENE);
-            }
-        ));
+        HideMainMenu();
+        StartCoroutine(_mainMenuEnterTransition.StartTransitionScale(_settingsTransform.GetComponent<RectTransform>(), true, complete => {}));
     }
 
     public void OpenCredits() {
         _creditsTransform.gameObject.SetActive(true);
+        HideMainMenu();
+        StartCoroutine(_mainMenuEnterTransition.StartTransitionScale(_creditsTransform.GetComponent<RectTransform>(), true, complete => {}));
+    }
 
-        StartCoroutine( _mainMenuEnterTransition.Transition(
-            (t) => {
-                _mainMenuTransform.localScale = Vector2.one - Vector2.one * t ;
-                _creditsTransform.localScale = Vector2.one * t ;
-            },
-            (complete) => {
-                if (!complete) return;
-                
-                GameStateManager.INSTANCE.TriggerStateChange(GameState.INSCENE);
-            }
-        ));
+    private void HideMainMenu() {
+        StartCoroutine(_mainMenuEnterTransition.StartTransitionScale(_mainMenuTransform.GetComponent<RectTransform>(), false, complete => {}));
     }
 
     public void ExitGame() {

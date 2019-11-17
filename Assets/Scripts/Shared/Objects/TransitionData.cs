@@ -60,26 +60,50 @@ public class TransitionData : ScriptableObject
         complete( true );
     }
 
-    public IEnumerator StartTransitionSlide( params RectTransform[] rects ) {
+    public IEnumerator StartTransitionSlide( RectTransform rect, bool transitionIn, Vector2 direction, System.Action<bool> complete ) {
+        complete(false);
+        Vector2 _anchorMin = rect.anchorMin;
+        Vector2 _anchorMax = rect.anchorMax;
+        float _offset = transitionIn ? 0 : 1;
         float _time = 0f;
+        direction = direction.normalized;
 
         while (_time <= transitionLength) {
-            float scaledTime = GetEased( _time / transitionLength);
-            foreach (RectTransform rect in rects) {
-                rect.anchorMin = new Vector2( scaledTime - 1,   rect.anchorMin.y);
-                rect.anchorMax = new Vector2( scaledTime ,      rect.anchorMax.y);
-            }
+            float scaledTime = _offset + GetEased( _time / transitionLength);
+
+            rect.anchorMin = new Vector2( _anchorMin.x + direction.x * scaledTime,   rect.anchorMin.y);
+            rect.anchorMax = new Vector2( _anchorMax.x + direction.x * scaledTime ,      rect.anchorMax.y);
+
             _time += Time.deltaTime;
             yield return null;
         }
 
         float maxEase = GetEasedMax();
 
-        foreach (RectTransform rect in rects) {
-            rect.anchorMin = new Vector2( maxEase - 1   , rect.anchorMin.y);
-            rect.anchorMax = new Vector2( maxEase       , rect.anchorMax.y);
+        rect.anchorMin = new Vector2( _anchorMin.x + direction.x * (_offset + maxEase)   , rect.anchorMin.y);
+        rect.anchorMax = new Vector2( _anchorMax.x + direction.x * (_offset + maxEase)       , rect.anchorMax.y);
+        
+        complete(true);
+    }
+
+    public IEnumerator StartTransitionScale( RectTransform rect, bool transitionIn, System.Action<bool> complete ) {
+        complete(false);
+        float _offset = transitionIn ? 0 : 1;
+        float _scale = transitionIn ? 1 : -1;
+        float _time = 0f;
+
+        while (_time <= transitionLength) {
+            float scaledTime = _offset + _scale*GetEased( _time / transitionLength);
+
+            rect.transform.localScale = Vector2.one * scaledTime;
+
+            _time += Time.deltaTime;
+            yield return null;
         }
 
+        rect.transform.localScale = Vector2.one * (_offset + _scale*GetEasedMax());
+        
+        complete(true);
     }
 
 }

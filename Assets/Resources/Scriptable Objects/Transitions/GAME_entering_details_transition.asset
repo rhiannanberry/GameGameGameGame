@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66ff0c04895a3874c85d66d3a65d7c78, type: 3}
-  m_Name: MinigameEnteringBG
+  m_Name: GAME_entering_details_transition
   m_EditorClassIdentifier: 
   easingType: 4
   customEasingCurve:
@@ -18,27 +18,36 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      value: 0
+      inSlope: 3.4642859
+      outSlope: 3.4642859
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.6666667
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 1
+      time: 0.28
+      value: 0.97
+      inSlope: 0.14117652
+      outSlope: 0.14117652
+      tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0.6111111
+      outWeight: 0.852459
+    - serializedVersion: 3
+      time: 0.72
+      value: 1.03
+      inSlope: 0.12263242
+      outSlope: 0.12263242
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.39583328
+      outWeight: 0.702381
     - serializedVersion: 3
       time: 1
-      value: 2
-      inSlope: 3.0000002
-      outSlope: 3.0000002
+      value: 3
+      inSlope: 7.035715
+      outSlope: 7.035715
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334

@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class PersistentDataManager : MonoBehaviour
 {
+    [Scene] public string runOverScene;
+
     public PlayerSettings debug_playerSettings;
     public MinigameList debug_minigameMasterList;
     public Run debug_run;
@@ -48,6 +50,22 @@ public class PersistentDataManager : MonoBehaviour
     }
 
     //Public Methods
+
+    public void OnDrawGizmos() {
+        if (EditorApplication.isPlayingOrWillChangePlaymode == false) return;
+
+        string s = IsInMinigame() == null ? "IN MENU" : "IN MINIGAME";
+        UnityEditor.Handles.BeginGUI();
+        GUI.color = Color.white;
+        GUIContent st = new GUIContent(s);
+
+        Vector2 stSize = GUI.skin.label.CalcSize(st);
+
+        GUI.Label(new Rect(5,20,stSize.x, stSize.y), s);
+        //Vector2 size = GUI.skin.label.CalcSize(new GUIContent("ssttst hshd"));
+        //GUI.Label(new Rect(0,0,size.x,size.y), "kdkdkd");
+        UnityEditor.Handles.EndGUI();
+    }
 
     public void SavePlayerSettings() {
         print(playerSettings);
