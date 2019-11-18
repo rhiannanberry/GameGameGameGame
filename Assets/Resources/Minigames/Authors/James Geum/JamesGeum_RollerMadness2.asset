@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c684674b01f71dc4a85b85a765decfac, type: 3}
-  m_Name: JamesGeum_RollerMadness1
+  m_Name: JamesGeum_RollerMadness2
   m_EditorClassIdentifier: 
-  _name: Roller Madness 1
+  _name: Roller Madness II
   _description: Use WASD to avoid falling orange blocks, and collect 5 coins in the
     time limit!
-  _author: James Geum
-  _sceneName: james_RollerMadness1
-  _timeLimit: 20
+  _author: 
+  _sceneName: james_RollerMadness2
+  _timeLimit: 10
   _scoreBased: 1
   _scoreToWin: 5
   _survival: 0
