@@ -13,7 +13,7 @@ public class Dog : ExitingBehaviour
     }
 
     protected override void OnStateEnter() {
-        if(PersistentDataManager.run.gameWon) target += new Vector2(0,moveUp);
+        if(PersistentDataManager.RUN.WonGame) target += new Vector2(0,moveUp);
     }
 
     protected override void OnStateExit() {}

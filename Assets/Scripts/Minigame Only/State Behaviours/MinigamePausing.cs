@@ -37,9 +37,7 @@ public class MinigamePausing : PauseBehaviour
     }
 
     public void ExitRun() {
-        PersistentDataManager.run.exitEarly = true;
-        GameStateManager.INSTANCE.TriggerStateChange(GameState.INGAME);
-        GameStateManager.INSTANCE.TriggerStateChange(GameState.EXITING);
+        PersistentDataManager.RUN.ExitEarly();
     }
 
     public void ReturnToGame() {

@@ -10,7 +10,7 @@ public class ThrownFlyer : MinigameBehaviour
     public float speed = 3;
     Vector3 directionVector;
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         base.Start();
         player = GameObject.Find("Player");
@@ -30,7 +30,7 @@ public class ThrownFlyer : MinigameBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         Debug.Log("hit!");
         if (other.gameObject == player && running) {
-            PersistentDataManager.run.GameLost();
+            PersistentDataManager.RUN.GameLost();
         }
     }
 

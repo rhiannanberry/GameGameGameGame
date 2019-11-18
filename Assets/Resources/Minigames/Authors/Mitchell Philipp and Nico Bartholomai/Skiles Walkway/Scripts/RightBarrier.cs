@@ -7,7 +7,7 @@ public class RightBarrier : MinigameBehaviour
     static bool running = false;
     GameObject player;
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         base.Start();
         player = GameObject.Find("Player");
@@ -23,7 +23,7 @@ public class RightBarrier : MinigameBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject == player && running) {
-            PersistentDataManager.run.GameWon();
+            PersistentDataManager.RUN.GameWon();
         }
     }
 

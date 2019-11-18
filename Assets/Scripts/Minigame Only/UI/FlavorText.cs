@@ -16,7 +16,7 @@ public class FlavorText : MonoBehaviour
     {
         txt = GetComponent<TextMeshProUGUI>();
         System.Random random = new System.Random();
-        if (PersistentDataManager.run.gameWon) {
+        if (PersistentDataManager.RUN.WonGame) {
             txt.text = win[random.Next(win.Length)];
         } else {
             txt.text = lose[random.Next(lose.Length)];

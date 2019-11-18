@@ -20,7 +20,7 @@ public class ExitingMainMenu : ExitingBehaviour
 
     public static void StartNewQuickplayRun() {
         PersistentDataManager.INSTANCE.CreateNewRun(PersistentDataManager.minigameMasterList.RandomReorder());
-        SceneLoader._BeginExitToScene(PersistentDataManager.run.CurrentGame.SceneName);
+        SceneLoader._BeginExitToScene(PersistentDataManager.RUN.CurrentGame.SceneName);
     }
 
     public static void GotoCustomPlay() {

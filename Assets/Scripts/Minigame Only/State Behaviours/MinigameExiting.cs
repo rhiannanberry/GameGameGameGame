@@ -18,7 +18,7 @@ public class MinigameExiting : ExitingBehaviour
 
     IEnumerator EXIT() {
         yield return new WaitForSeconds(_exitTime);
-        SceneLoader._LoadScene(PersistentDataManager.run.NextScene());
+        SceneLoader._LoadScene(PersistentDataManager.RUN.NextScene());
     }
 
 }

@@ -19,7 +19,7 @@ public class SettingsBehaviour : MonoBehaviour
     [SerializeField] private Button _back = null;
     [SerializeField] private Button _save = null, _dontSave = null, _cancel = null;
 
-    private bool _initialized = false;
+    //private bool _initialized = false;
     private PlayerSettings _oldSettings;
 
     public void Start() {
@@ -69,7 +69,7 @@ public class SettingsBehaviour : MonoBehaviour
 
     private void DontSave() {
         LoadValues();
-        MusicManager.INSTANCE.UpdateVolume();
+        UpdateVolume();
         CloseSettings();
     }
 
@@ -122,6 +122,6 @@ public class SettingsBehaviour : MonoBehaviour
     }
 
     private void UpdateVolume() {
-        MusicManager.INSTANCE.UpdateVolume();
+        MusicManager._UpdateVolume();
     }
 }

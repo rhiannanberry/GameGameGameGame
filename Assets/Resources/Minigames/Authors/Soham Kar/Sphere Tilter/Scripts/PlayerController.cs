@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 		{
 			other.gameObject.SetActive(false);
 			audio.Pause();
-			PersistentDataManager.run.GameWon();
+			PersistentDataManager.RUN.GameWon();
 		}
 	}
 }

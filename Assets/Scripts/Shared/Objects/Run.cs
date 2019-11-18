@@ -5,13 +5,21 @@ using UnityEngine;
 [System.Serializable]
 public class Run : System.Object
 {
+    #region Properties
     [SerializeField] private MinigameList _runList;
     [SerializeField] private int _runLength;
     [SerializeField] private int _minigameIndex;
     [SerializeField] private int _lives;
-    private bool runOver = false;
-    [HideInInspector] public bool gameWon = false;
-    [HideInInspector] public bool exitEarly = false;
+    
+    private bool _runOver = false;
+    private bool _gameWon = false;
+    private bool _exitEarly = false;
+
+    public Minigame CurrentGame { get { return _runList.minigames[_minigameIndex]; }}
+    public string CurrentScene { get { return CurrentGame.SceneName; }}
+    public int Lives { get {return _lives; }}
+    public bool WonGame { get { return _gameWon; }}
+    #endregion
 
     public Run(MinigameList runList) {
         _runList = runList;
@@ -21,17 +29,20 @@ public class Run : System.Object
     }
 
 
-    //Properties
-    public Minigame CurrentGame { get { return _runList.minigames[_minigameIndex]; }}
-    public int Lives { get {return _lives; }}
-
+    
 
     //Public Methods
+
+    public void ExitEarly() {
+        _exitEarly = true;
+        GameStateManager.INSTANCE.TriggerStateChange(GameState.INGAME);
+        GameStateManager.INSTANCE.TriggerStateChange(GameState.EXITING);
+    }
 
     public void GameWon() {
         float timeTaken = CurrentGame.TimeLimit - TimerBehaviour.time;
         bool isNewRecord = _runList.minigames[_minigameIndex].UpdateWinTime(timeTaken);
-        gameWon = true;
+        _gameWon = true;
         RunResult();
     }
 
@@ -51,16 +62,13 @@ public class Run : System.Object
     public void GameLost() {
         _runList.minigames[_minigameIndex].SetGamePlayed();
         _lives--;
-        gameWon = false;
+        _gameWon = false;
         RunResult();
     }
 
-    public string CurrentScene() {
-        return CurrentGame.SceneName;
-    }
 
     public string NextScene() {
-        if (exitEarly || runOver) {
+        if (_exitEarly || _runOver) {
             return PersistentDataManager.INSTANCE.runOverScene;
         }
         if (HasNextGame()) {
@@ -82,7 +90,7 @@ public class Run : System.Object
         CurrentGame.ResetScore();
         if ( _lives == 0 || !HasNextGame() ) {
             Debug.Log("RUN END");
-            runOver = true;
+            _runOver = true;
         } else {
             Debug.Log("RUN CONTINUE");
         }

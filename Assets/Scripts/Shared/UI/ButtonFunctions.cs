@@ -22,14 +22,14 @@ public class ButtonFunctions : MinigameBehaviour
     }
 
     public void GameWon() {
-        if (PersistentDataManager.run != null) PersistentDataManager.run.GameWon();
+        PersistentDataManager.RUN.GameWon();
     }
 
     public void GameLost() {
-        if (PersistentDataManager.run != null) PersistentDataManager.run.GameLost();
+        PersistentDataManager.RUN.GameLost();
     }
 
     public void IncreaseScore(int amt) {
-        if (PersistentDataManager.run != null) PersistentDataManager.run.CurrentGame.CurrentScore += amt;
+        PersistentDataManager.RUN.CurrentGame.CurrentScore += amt;
     }
 }

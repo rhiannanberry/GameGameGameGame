@@ -13,7 +13,7 @@ public class SFXMinigameEndingBehaviour : ExitingBehaviour
     }
 
     protected override void OnStateEnter() {
-        if (PersistentDataManager.run.gameWon && winSound != null) {
+        if (PersistentDataManager.RUN.WonGame && winSound != null) {
             sfx.clip = winSound;
             sfx.Play();
         } else if (loseSound != null) {

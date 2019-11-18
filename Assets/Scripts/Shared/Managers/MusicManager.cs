@@ -88,6 +88,19 @@ public class MusicManager : MonoBehaviour
         }
     }
 
+    public static void _UpdateVolume() {
+        if (INSTANCE == null) {
+            Debug.LogWarning("Instance of MusicManager does not exist");
+            return;
+        }
+        float master = PersistentDataManager.playerSettings.MasterVolume;
+        float music = master * PersistentDataManager.playerSettings.MusicVolume;
+
+        foreach (AudioFile m in INSTANCE.musicFiles) {
+            m.source.volume = music;
+        }
+    }
+
     public void CheckTransition() {
         if (current == null) {
             FadeIn(sceneMusic, PersistentDataManager.playerSettings.MasterVolume * PersistentDataManager.playerSettings.MusicVolume, transitionTime);

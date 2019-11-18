@@ -24,7 +24,7 @@ public class LivesBehaviour : MinigameBehaviour
             if (child == transform) continue;
             GameObject.Destroy(child.gameObject);
         }
-        for (int i=0; i < PersistentDataManager.run.Lives; i++) {
+        for (int i=0; i < PersistentDataManager.RUN.Lives; i++) {
             Instantiate(_lifePrefab, transform);
         }
     }

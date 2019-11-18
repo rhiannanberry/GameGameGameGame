@@ -1,44 +1,17 @@
 fileFormatVersion: 2
-guid: 6f65bd7d73a194b4ab79c06d35efe1bc
+guid: d44c9e4aef3614128a9215bebd68a4ac
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable:
   - first:
-      74: -8547003001495533548
-    second: Shoulder.Left|Cube.001Action
-  - first:
-      74: -6702229448054291372
-    second: Shoulder.Left|Sphere.000Action
-  - first:
-      74: 6042292598457451525
-    second: Shoulder.Left|Sphere.006Action
-  - first:
-      74: -1958678725637970499
-    second: Chest|Cube.001Action
-  - first:
-      74: -4952383761969356548
-    second: Chest|Sphere.000Action
-  - first:
-      74: -5215315639728508559
-    second: Chest|Sphere.006Action
-  - first:
-      74: -3439816165064511207
-    second: Shoulder.Right|Cube.001Action
-  - first:
-      74: 1949451202596145272
-    second: Shoulder.Right|Sphere.000Action
-  - first:
-      74: 782425286452727822
-    second: Shoulder.Right|Sphere.006Action
-  - first:
-      74: -1422011007694221501
-    second: Rise
-  - first:
-      74: 4065910277313914012
-    second: Rise
+      74: -8945691123924629249
+    second: Armature|Idle
   - first:
       74: -3431977313126088683
     second: Armature|IdleDown
+  - first:
+      74: 4733286433499938339
+    second: Armature|Rise
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -59,7 +32,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -68,40 +41,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle
+      name: Armature|Idle
       takeName: Armature|Idle
-      internalID: -1422011007694221501
+      internalID: 0
       firstFrame: 0
-      lastFrame: 2
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Rise
-      takeName: Armature|ArmatureAction.001
-      internalID: 4065910277313914012
-      firstFrame: 0
-      lastFrame: 28
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -128,9 +72,38 @@ ModelImporter:
     - serializedVersion: 16
       name: Armature|IdleDown
       takeName: Armature|IdleDown
-      internalID: -3431977313126088683
+      internalID: 0
       firstFrame: 0
       lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Rise
+      takeName: Armature|Rise
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 28
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -196,47 +169,7 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton:
-    - name: Mech(Clone)
-      parentName: 
-      position: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Chest
-      parentName: Mech(Clone)
-      position: {x: -0, y: -4.4, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Armature
-      parentName: Mech(Clone)
-      position: {x: -0, y: -4.4, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Chest 1
-      parentName: Armature
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Shoulder.L
-      parentName: Chest 1
-      position: {x: -1.6116246, y: -0.0108162165, z: -0.0000000014532616}
-      rotation: {x: -0.000000010744332, y: -2.8567104e-10, z: 0.9994657, w: 0.03268568}
-      scale: {x: 0.99999475, y: 1, z: 1}
-    - name: Shoulder.L_end
-      parentName: Shoulder.L
-      position: {x: -0, y: 2.6305895, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Shoulder.R
-      parentName: Chest 1
-      position: {x: 1.6116246, y: -0.0108162165, z: -0.0000000014532616}
-      rotation: {x: 0.000000010744332, y: -2.8567104e-10, z: 0.9994657, w: -0.03268568}
-      scale: {x: 0.99999475, y: 1, z: 1}
-    - name: Shoulder.R_end
-      parentName: Shoulder.R
-      position: {x: -0, y: 2.6305895, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
+    skeleton: []
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -245,9 +178,9 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: Armature
+    rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2

@@ -57,6 +57,6 @@ public class MinigameSelectionPanel : MonoBehaviour
     public void StartRun() {
         List<Minigame> selected = _buttons.Where(x => x.Selected).Select(x => x.MiniGame).ToList();
         PersistentDataManager.INSTANCE.CreateNewRun((new MinigameList(selected)).RandomReorder());
-        SceneLoader._BeginExitToScene(PersistentDataManager.run.CurrentGame.SceneName);
+        SceneLoader._BeginExitToScene(PersistentDataManager.RUN.CurrentGame.SceneName);
     }
 }

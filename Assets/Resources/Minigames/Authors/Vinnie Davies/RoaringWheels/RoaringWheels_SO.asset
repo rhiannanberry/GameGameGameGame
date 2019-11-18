@@ -16,6 +16,8 @@ MonoBehaviour:
   _description: The more noise you make the faster you go! Try to make it over the
     gap before time is up.
   _author: Vinnie Davies
-  _scenePath: Assets/Resources/Minigames/Authors/Vinnie Davies/RoaringWheels/RoaringWheels_scene.unity
-  _sceneName: RoaringWheels_scene
+  _sceneName: vinnie_RoaringWheels_scene
   _timeLimit: 25
+  _scoreBased: 0
+  _scoreToWin: 0
+  _survival: 0

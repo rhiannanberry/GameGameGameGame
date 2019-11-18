@@ -8,7 +8,7 @@ public class MinigameEntering : EnteringBehaviour
 {
 
     [Header("Master Transition")]
-    [SerializeField] private float _exitTime;
+    [SerializeField] private float _exitTime = 4f;
 
     [Header("UI Elements")]
     [SerializeField] private TextMeshProUGUI _title = null;
@@ -17,7 +17,7 @@ public class MinigameEntering : EnteringBehaviour
     [SerializeField] private TextMeshProUGUI _timeLimit = null;
 
     protected override void OnStateEnter() {
-        Minigame m = PersistentDataManager.run.CurrentGame;
+        Minigame m = PersistentDataManager.RUN.CurrentGame;
         _title.text = m.Name;
         _author.text = "Made by: " + m.Author;
         _description.text = m.Description;

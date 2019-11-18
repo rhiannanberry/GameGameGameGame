@@ -18,8 +18,8 @@ public class GameController : MinigameBehaviour
 	public float treeStartWait;
 	public float treeSpawnWait;
 
-	private float timer = 0;
-	private bool inMinigame = false;
+	//private float timer = 0;
+	[HideInInspector] public bool inMinigame = false;
 	private IEnumerator waves, wavesTrees;
 
 	protected override void Start()
@@ -50,6 +50,7 @@ public class GameController : MinigameBehaviour
 				Vector3 spawnPosition = new Vector3((Random.Range(-spawnValues.x, spawnValues.x)), spawnValues.y, spawnValues.z);
 				Quaternion spawnRotation = Quaternion.identity;
 				clone = Instantiate(hazard, spawnPosition, spawnRotation);
+				clone.GetComponent<Mover>().gc = this;
 			}
 			yield return new WaitForSeconds(spawnWait);
 		}
@@ -64,6 +65,7 @@ public class GameController : MinigameBehaviour
 				Vector3 spawnPosition = new Vector3((Random.Range(-treeSpawnValues.x, treeSpawnValues.x)), treeSpawnValues.y, treeSpawnValues.z);
 				Quaternion spawnRotation = Quaternion.identity;
 				clone1 = Instantiate(hazard1, spawnPosition, spawnRotation);
+				clone1.GetComponent<Mover>().gc = this;
 			}
 			yield return new WaitForSeconds(treeSpawnWait);
 		}

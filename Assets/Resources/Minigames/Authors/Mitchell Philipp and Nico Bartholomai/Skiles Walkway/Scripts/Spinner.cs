@@ -7,10 +7,6 @@ public class Spinner : MinigameBehaviour
     public float spinSpeed = 5;
     static bool running = false;
     // Start is called before the first frame update
-    void Start()
-    {
-        base.Start();    
-    }
 
     protected override void OnStateEnter() {
         if (!running) running = true;

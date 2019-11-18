@@ -6,6 +6,7 @@ public class Candle : MinigameBehaviour
 {
     public static int numCandles = 0;
     public Sprite outCandleSprite;
+    public string blowSound;
     private SpriteRenderer sr;
     private bool _canInput = false;
 
@@ -25,7 +26,8 @@ public class Candle : MinigameBehaviour
     }    
 
     
-    public void PutOut() {        
+    public void PutOut() {   
+        SoundManager._PlaySound(blowSound);     
         GetComponent<Animator>().enabled = false;
         sr.sprite = outCandleSprite;
         numCandles--;
@@ -39,6 +41,6 @@ public class Candle : MinigameBehaviour
 
     private void CheckWin() {
         if (numCandles == 0)
-            PersistentDataManager.run.GameWon();
+            PersistentDataManager.RUN.GameWon();
     }
 }

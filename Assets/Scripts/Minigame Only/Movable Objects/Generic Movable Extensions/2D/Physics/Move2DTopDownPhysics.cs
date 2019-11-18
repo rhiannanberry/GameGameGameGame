@@ -7,7 +7,7 @@ public class Move2DTopDownPhysics : Movable
    private Vector2 moveDirection;
    private Rigidbody2D rb;
 
-   void Start() {
+   protected override void Start() {
        rb = GetComponent<Rigidbody2D>();
    }
 

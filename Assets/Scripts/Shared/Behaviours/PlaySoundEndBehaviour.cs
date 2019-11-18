@@ -8,7 +8,7 @@ public class PlaySoundEndBehaviour : ExitingBehaviour
     public AudioSource sfx;
 
     protected override void OnStateEnter() {
-        if (PersistentDataManager.run.gameWon) {
+        if (PersistentDataManager.RUN.WonGame) {
             sfx.clip = winSound;
         } else {
             sfx.clip = loseSound;

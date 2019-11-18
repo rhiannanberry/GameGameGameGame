@@ -66,19 +66,19 @@ public class GameManager : MinigameBehaviour {
 	void Update () {
 		if (inGame == false) return;
 
-		if (canBeatLevel && PersistentDataManager.run.CurrentGame.ScoreMet()) {
-			PersistentDataManager.run.GameWon();
+		if (canBeatLevel && PersistentDataManager.RUN.CurrentGame.ScoreMet()) {
+			PersistentDataManager.RUN.GameWon();
 		}
 	}
 
 
 	public void Collect(int amount) {
-		PersistentDataManager.run.CurrentGame.CurrentScore += amount;
+		PersistentDataManager.RUN.CurrentGame.CurrentScore += amount;
 		//score += amount;
 		if (canBeatLevel) {
-			mainScoreDisplay.text = PersistentDataManager.run.CurrentGame.CurrentScore.ToString () + " of "+beatLevelScore.ToString ();
+			mainScoreDisplay.text = PersistentDataManager.RUN.CurrentGame.CurrentScore.ToString () + " of "+beatLevelScore.ToString ();
 		} else {
-			mainScoreDisplay.text = PersistentDataManager.run.CurrentGame.CurrentScore.ToString ();
+			mainScoreDisplay.text = PersistentDataManager.RUN.CurrentGame.CurrentScore.ToString ();
 		}
 
 	}

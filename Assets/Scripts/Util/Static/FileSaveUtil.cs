@@ -48,7 +48,9 @@ public static class FileSaveUtil
     public static void Delete(string saveName) {
         if (Exists(saveName)) {
             File.Delete(FullPath(saveName));
+            #if UNITY_EDITOR
             UnityEditor.AssetDatabase.Refresh();
+            #endif
         }
     }
 

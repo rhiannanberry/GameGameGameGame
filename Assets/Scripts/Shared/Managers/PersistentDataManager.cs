@@ -18,7 +18,17 @@ public class PersistentDataManager : MonoBehaviour
     public static PersistentDataManager INSTANCE;
     public static PlayerSettings playerSettings;
     public static MinigameList minigameMasterList;
-    public static Run run;
+    private static Run run;
+
+    public static Run RUN { get {
+        if (RunExists()){
+            return run;
+        } else {
+            return null;
+        }
+    }}
+
+    public static bool InMinigame { get { return INSTANCE.IsInMinigame() !=null; }}
     
     // MonoBehaviour Methods
 
@@ -35,22 +45,35 @@ public class PersistentDataManager : MonoBehaviour
             }
         }
 
-        if (MusicManager.INSTANCE != null) {
-            MusicManager.INSTANCE.UpdateVolume();
-        }
-
-
         debug_playerSettings = playerSettings;
         debug_minigameMasterList = minigameMasterList;
     }
 
     private void Start() {
         INSTANCE = this;
+        MusicManager._UpdateVolume();
+        SoundManager._UpdateVolume();
             
     }
 
+    #region Static Methods
+
+    public static void ClearRun() {
+        run = null;
+    }
+    private static bool RunExists() {
+        if (run == null) {
+            Debug.LogError("Run does not exist, cannot access Current Game");
+            return false;
+        }
+        return true;
+    }
+
+    #endregion
+
     //Public Methods
 
+    #if UNITY_EDITOR
     public void OnDrawGizmos() {
         if (EditorApplication.isPlayingOrWillChangePlaymode == false) return;
 
@@ -66,6 +89,8 @@ public class PersistentDataManager : MonoBehaviour
         //GUI.Label(new Rect(0,0,size.x,size.y), "kdkdkd");
         UnityEditor.Handles.EndGUI();
     }
+    #endif
+
 
     public void SavePlayerSettings() {
         print(playerSettings);

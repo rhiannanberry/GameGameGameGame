@@ -67,10 +67,10 @@ public class Collisions : MonoBehaviour
         }
         switch(collisionResult) {
             case Result.Win:
-                PersistentDataManager.run.GameWon();
+                PersistentDataManager.RUN.GameWon();
             break;
             case Result.Lose:
-                PersistentDataManager.run.GameLost();
+                PersistentDataManager.RUN.GameLost();
             break;
             case Result.Hurt:
                 //TODO: idk
