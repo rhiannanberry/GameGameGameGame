@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 11400000}
   - component: {fileID: 1199976917}
   - component: {fileID: 2480894906151064148}
+  - component: {fileID: 4735232618444018040}
   m_Layer: 9
   m_Name: RollerBall
   m_TagString: Player
@@ -245,3 +246,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _explosionPrefab: {fileID: 1792983122110270, guid: f220dd95996e86b459c96e9b7fdf16b0,
     type: 3}
+  _explosionSFX: 
+--- !u!114 &4735232618444018040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1065383e6d27d4941b9db470a4a08c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useCustom: 1
+  collisionResult: 3
+  customCollisionResults:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2480894906151064148}
+        m_MethodName: ExplodeOther
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  sources: []
+  tagSources:
+  - Pickup
+  nameSources: []
+  lastCollided: {fileID: 0}

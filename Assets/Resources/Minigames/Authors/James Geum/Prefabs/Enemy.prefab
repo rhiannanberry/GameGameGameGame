@@ -199,3 +199,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _explosionPrefab: {fileID: 1792983122110270, guid: 5b7cc1af475e002458339e5a126dec06,
     type: 3}
+  _explosionSFX: enemy

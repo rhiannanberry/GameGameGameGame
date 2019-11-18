@@ -9,11 +9,6 @@ public class TimedObjectDestructor : MinigameBehaviour {
 	private bool _canCount = false;
 	private float _time = 0f;
 
-	// Use this for initialization
-	void Awake () {
-		// invote the DestroyNow funtion to run after timeOut seconds
-		Invoke ("DestroyNow", timeOut);
-	}
 
 	protected override void OnStateEnter() {
         _canCount = true;
@@ -36,6 +31,6 @@ public class TimedObjectDestructor : MinigameBehaviour {
 		if (detachChildren) { // detach the children before destroying if specified
 			transform.DetachChildren ();
 		}
-		DestroyObject (gameObject);
+		GameObject.Destroy(gameObject);
 	}
 }

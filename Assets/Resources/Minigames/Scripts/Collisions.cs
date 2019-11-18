@@ -25,27 +25,23 @@ public class Collisions : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("col2d");
         if (ValidateCollision(col.gameObject)) {
             ExecuteCollisionResult(col.gameObject);
         }
     }
     void OnCollisionEnter(Collision other) {
-        Debug.Log("col");
         if (ValidateCollision(other.gameObject)) {
             ExecuteCollisionResult(other.gameObject);
         }
     }
     
     void OnTriggerEnter(Collider other) {
-        Debug.Log("trigger");
         if (ValidateCollision(other.gameObject)) {
             ExecuteCollisionResult(other.gameObject);
         }
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("trigger2d");
         if (ValidateCollision(other.gameObject)) {
             ExecuteCollisionResult(other.gameObject);
         }

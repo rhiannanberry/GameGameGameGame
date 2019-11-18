@@ -44,8 +44,18 @@ public class SoundManager : MonoBehaviour
     }
 
     public static void _PlaySound(string name) {
-        AudioFile m = Find(name);
-        if (m != null) m.source.Play();
+        AudioFile[] m = FindAll(name);
+        if (m.Length == 1) {
+            m[0].source.Play();
+        } else if (m.Length > 1) {
+            AudioFile notPlaying = Array.Find(m, a => !a.source.isPlaying);
+            if (notPlaying != null) {
+                notPlaying.source.Play();
+            } else {
+                m[0].source.Play();
+            }
+        }
+        //if (m != null) m.source.Play();
     }
 
 
@@ -87,6 +97,16 @@ public class SoundManager : MonoBehaviour
         foreach (var m in INSTANCE.audioFiles) {
             m.source.volume = m.volume * sfx;
         }
+    }
+
+    private static AudioFile[] FindAll(string name) {
+        AudioFile[] m = Array.FindAll(INSTANCE.audioFiles.ToArray(), a => a.audioName == name);
+        //if (m == null) m = Array.Find(INSTANCE.externalSFX.ToArray(), a => a.audioName == name);
+        if (m.Length == 0) {
+            Debug.LogError("Sound name " + name + " not found!" );
+        }
+
+        return m;
     }
 
     private static AudioFile Find(string name) {

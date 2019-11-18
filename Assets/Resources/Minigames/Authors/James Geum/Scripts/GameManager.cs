@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class GameManager : MinigameBehaviour {
@@ -10,26 +11,10 @@ public class GameManager : MinigameBehaviour {
 	[Tooltip("If not set, the player will default to the gameObject tagged as Player.")]
 	public GameObject player;
 
-	public enum gameStates {Playing, Death, GameOver, BeatLevel};
-	public gameStates gameState = gameStates.Playing;
+	[Header("UI Elements")]
+	public TextMeshProUGUI currentScore;
+	public TextMeshProUGUI scoreToWin;
 
-	public int score=0;
-	public bool canBeatLevel = false;
-	public int beatLevelScore=0;
-
-	public GameObject mainCanvas;
-	public Text mainScoreDisplay;
-	public GameObject gameOverCanvas;
-	public Text gameOverScoreDisplay;
-
-	[Tooltip("Only need to set if canBeatLevel is set to true.")]
-	public GameObject beatLevelCanvas;
-
-	public AudioSource backgroundMusic;
-	public AudioClip gameOverSFX;
-
-	[Tooltip("Only need to set if canBeatLevel is set to true.")]
-	public AudioClip beatLevelSFX;
 
 	private Health playerHealth;
 	private bool inGame = false;
@@ -46,13 +31,7 @@ public class GameManager : MinigameBehaviour {
 
 		playerHealth = player.GetComponent<Health>();
 
-		// setup score display
-		Collect (0);
-
-		// make other UI inactive
-		gameOverCanvas.SetActive (false);
-		if (canBeatLevel)
-			beatLevelCanvas.SetActive (false);
+		UpdateUI();
 	}
 
 	protected override void OnStateEnter() {
@@ -66,20 +45,19 @@ public class GameManager : MinigameBehaviour {
 	void Update () {
 		if (inGame == false) return;
 
-		if (canBeatLevel && PersistentDataManager.RUN.CurrentGame.ScoreMet()) {
+		if (PersistentDataManager.RUN.CurrentGame.ScoreMet()) {
 			PersistentDataManager.RUN.GameWon();
 		}
 	}
 
 
-	public void Collect(int amount) {
-		PersistentDataManager.RUN.CurrentGame.CurrentScore += amount;
-		//score += amount;
-		if (canBeatLevel) {
-			mainScoreDisplay.text = PersistentDataManager.RUN.CurrentGame.CurrentScore.ToString () + " of "+beatLevelScore.ToString ();
-		} else {
-			mainScoreDisplay.text = PersistentDataManager.RUN.CurrentGame.CurrentScore.ToString ();
-		}
+	public void Collect() {
+		PersistentDataManager.RUN.CurrentGame.CurrentScore += 1;
+		UpdateUI();
+	}
 
+	private void UpdateUI() {
+		currentScore.text = PersistentDataManager.RUN.CurrentGame.CurrentScore.ToString();
+		scoreToWin.text = PersistentDataManager.RUN.CurrentGame.ScoreToWin.ToString();
 	}
 }

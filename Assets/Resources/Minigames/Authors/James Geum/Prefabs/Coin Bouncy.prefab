@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 23087632030277454}
   - component: {fileID: 54977016748768346}
   - component: {fileID: 135789109663479610}
-  - component: {fileID: 114444950688037716}
   - component: {fileID: 65464424120424578}
   - component: {fileID: 96705776252938812}
   - component: {fileID: 114072822340520994}
   - component: {fileID: -6102119540343505409}
+  - component: {fileID: 4086987271733286016}
   m_Layer: 0
   m_Name: Coin Bouncy
   m_TagString: Pickup
@@ -114,21 +114,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.0000006
   m_Center: {x: 0.00000059604645, y: -0.000001013279, z: 0.0000006109476}
---- !u!114 &114444950688037716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1320643937374734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33607e24f3d064cf38cafb600232db7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value: 1
-  explosionPrefab: {fileID: 1792983122110270, guid: 293325205343aaa4e813b28ee1e9d17e,
-    type: 3}
 --- !u!65 &65464424120424578
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -274,3 +259,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movableSettings: {fileID: 0}
+--- !u!114 &4086987271733286016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320643937374734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c37151b0e1b4fd439d12f636739f321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _explosionPrefab: {fileID: 1792983122110270, guid: 293325205343aaa4e813b28ee1e9d17e,
+    type: 3}
+  _explosionSFX: coin
