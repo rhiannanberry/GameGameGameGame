@@ -15,9 +15,6 @@ EditorBuildSettings:
     path: Assets/Resources/Scenes/MENU_RunOver.unity
     guid: 56aea22ab9624e3498911844c15df639
   - enabled: 1
-    path: Assets/Resources/Scenes/john_Mechorate.unity
-    guid: 6310fefdbc6304242a18ac3fc27ce744
-  - enabled: 1
     path: Assets/Resources/Scenes/rhiannan_LailaBdayVisit.unity
     guid: 835cb4135fee2cccd81f28d7095457b4
   - enabled: 1
@@ -39,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Resources/Scenes/james_RollerMadness2.unity
     guid: b203e4370f125ea4290c356a09ae2ad4
   - enabled: 1
+    path: Assets/Resources/Scenes/john_Mechorate.unity
+    guid: 6310fefdbc6304242a18ac3fc27ce744
+  - enabled: 1
     path: Assets/Resources/Scenes/rigved_ShootEm_scene.unity
     guid: 9bc0e1dd8aaa041d7b0ff51aca95abe1
   - enabled: 1
@@ -50,9 +50,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Resources/Scenes/SohamKar_SphereTilter_Scene.unity
     guid: a228a2420d0af42469a741177c9dced3
-  - enabled: 1
-    path: Assets/Resources/Scenes/rhiannan_LailaBdayPresent 1.unity
-    guid: 8706a94cc4400ea418a8d0d32dbc2aa4
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Resources/Scenes/TEMPLATE_minigame_2d.unity
     guid: e5aab4d621aad5943850c9104e187a0f

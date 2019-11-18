@@ -45,12 +45,18 @@ public static class FileSaveUtil
         return File.Exists(FullPath(saveName));
     }
 
+    public static void EditorDelete(string saveName) {
+        if (Exists(saveName)) {
+            #if UNITY_EDITOR
+            AssetDatabase.DeleteAsset("Assets/" + saveName + ".save");
+            UnityEditor.AssetDatabase.Refresh();
+            #endif
+        }
+    }
+
     public static void Delete(string saveName) {
         if (Exists(saveName)) {
             File.Delete(FullPath(saveName));
-            #if UNITY_EDITOR
-            UnityEditor.AssetDatabase.Refresh();
-            #endif
         }
     }
 

@@ -6,10 +6,13 @@ using System;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager INSTANCE;
-    public AudioFile[] audioFiles;
+    public List<AudioFile> audioFiles;
+
+    private List<AudioFile> externalSFX;
 
     private void Awake() {
         INSTANCE = this;
+        externalSFX = new List<AudioFile>();
         foreach (var a in audioFiles) {
             a.source = gameObject.AddComponent<AudioSource>();
             a.source.clip = a.audioClip;
@@ -34,6 +37,10 @@ public class SoundManager : MonoBehaviour
     public void UnPauseSound(string name) {
         AudioFile m = Find(name);
         if (m != null) m.source.UnPause();
+    }
+
+    public static void _AddExternalSound(AudioFile sound) {
+        INSTANCE.audioFiles.Add(sound);
     }
 
     public static void _PlaySound(string name) {
@@ -78,13 +85,13 @@ public class SoundManager : MonoBehaviour
         float master = PersistentDataManager.playerSettings.MasterVolume;
         float sfx = master * PersistentDataManager.playerSettings.SFXVolume;
         foreach (var m in INSTANCE.audioFiles) {
-            m.source.volume = sfx;
+            m.source.volume = m.volume * sfx;
         }
     }
 
     private static AudioFile Find(string name) {
-        AudioFile m = Array.Find(INSTANCE.audioFiles, a => a.audioName == name);
-
+        AudioFile m = Array.Find(INSTANCE.audioFiles.ToArray(), a => a.audioName == name);
+        //if (m == null) m = Array.Find(INSTANCE.externalSFX.ToArray(), a => a.audioName == name);
         if (m == null) {
             Debug.LogError("Sound name " + name + " not found!" );
         }

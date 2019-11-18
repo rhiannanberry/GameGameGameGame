@@ -31,6 +31,10 @@ public class MinigamePausing : PauseBehaviour
         }
     }
 
+    public void Pause() {
+        if (!_paused) GameStateManager.INSTANCE.TriggerStateChange(GameState.INPAUSE);
+    }
+
     protected override void OnStateExit() {
         _pauseCanvas.SetActive(false);
         _paused = false;

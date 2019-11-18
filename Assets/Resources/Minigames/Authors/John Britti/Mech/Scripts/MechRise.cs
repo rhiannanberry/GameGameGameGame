@@ -24,7 +24,8 @@ public class MechRise : MinigameBehaviour {
 
     void StartRise() {
         a.SetTrigger("Rise");
-        source.Play();
+        SoundManager._PlaySound("liftarrive");
+        //source.Play();
     }
 
     // Update is called once per frame

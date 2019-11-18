@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEditor;
 
 
@@ -25,13 +23,13 @@ public class SaveSettingsEditor : EditorWindow
 
         using (new EditorGUI.DisabledScope(!FileSaveUtil.Exists("playerSettings"))) {
             if (GUILayout.Button("Delete Player Settings")) {
-                FileSaveUtil.Delete("playerSettings");
+                FileSaveUtil.EditorDelete("playerSettings");
             }
         }
 
         using (new EditorGUI.DisabledScope(!FileSaveUtil.Exists("minigameMasterList"))) {
             if (GUILayout.Button("Delete Minigame Saves")) {
-                FileSaveUtil.Delete("minigameMasterList");
+                FileSaveUtil.EditorDelete("minigameMasterList");
             }
         }
     }

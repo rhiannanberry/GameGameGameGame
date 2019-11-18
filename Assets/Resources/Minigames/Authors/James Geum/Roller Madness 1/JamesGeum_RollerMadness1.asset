@@ -16,9 +16,8 @@ MonoBehaviour:
   _description: Use WASD to avoid falling orange blocks, and collect 5 coins in the
     time limit!
   _author: James Geum
-  _scenePath: Assets/Resources/Minigames/Authors/James Geum/Roller Madness 1/Level
-    1.unity
-  _sceneName: Level 1
+  _sceneName: james_RollerMadness1
   _timeLimit: 20
   _scoreBased: 1
   _scoreToWin: 5
+  _survival: 0

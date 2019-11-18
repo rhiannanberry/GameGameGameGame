@@ -80,12 +80,7 @@ public class MusicManager : MonoBehaviour
     }
 
     public void UpdateVolume() {
-        float master = PersistentDataManager.playerSettings.MasterVolume;
-        float music = master * PersistentDataManager.playerSettings.MusicVolume;
-
-        foreach (AudioFile m in musicFiles) {
-            m.source.volume = music;
-        }
+        _UpdateVolume();
     }
 
     public static void _UpdateVolume() {
@@ -97,16 +92,19 @@ public class MusicManager : MonoBehaviour
         float music = master * PersistentDataManager.playerSettings.MusicVolume;
 
         foreach (AudioFile m in INSTANCE.musicFiles) {
-            m.source.volume = music;
+            m.source.volume = m.volume * music;
         }
     }
 
     public void CheckTransition() {
+        float master = PersistentDataManager.playerSettings.MasterVolume;
+        float music = master * PersistentDataManager.playerSettings.MusicVolume;
+        AudioFile c = Find(sceneMusic);
         if (current == null) {
-            FadeIn(sceneMusic, PersistentDataManager.playerSettings.MasterVolume * PersistentDataManager.playerSettings.MusicVolume, transitionTime);
+            FadeIn(sceneMusic, music * c.volume, transitionTime);
         } else if (current != sceneMusic) {
             FadeOut(current, transitionTime);
-            FadeIn(sceneMusic, PersistentDataManager.playerSettings.MasterVolume * PersistentDataManager.playerSettings.MusicVolume, transitionTime);
+            FadeIn(sceneMusic, music * c.volume, transitionTime);
         }
         current = sceneMusic;
     }
