@@ -1479,7 +1479,7 @@ GameObject:
   - component: {fileID: 1591014187}
   m_Layer: 0
   m_Name: RaceCar
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2358,6 +2358,7 @@ GameObject:
   - component: {fileID: 2100438709}
   - component: {fileID: 2100438708}
   - component: {fileID: 2100438712}
+  - component: {fileID: 2100438713}
   m_Layer: 0
   m_Name: Win Platform
   m_TagString: GameState
@@ -2451,3 +2452,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ff0b0922cd66647aae9b2d362dcacf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2100438713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100438707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1065383e6d27d4941b9db470a4a08c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useCustom: 0
+  collisionResult: 0
+  customCollisionResults:
+    m_PersistentCalls:
+      m_Calls: []
+  sources: []
+  tagSources:
+  - Player
+  nameSources: []
+  lastCollided: {fileID: 0}

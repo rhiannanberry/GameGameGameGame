@@ -274,7 +274,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1528166358879758404}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7481201205847006680, guid: e313890893132c44bb2057ca155a16dd,
+          type: 3}
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: click
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5063102108002373153
 GameObject:
   m_ObjectHideFlags: 0

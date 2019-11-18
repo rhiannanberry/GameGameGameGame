@@ -35,6 +35,13 @@ public class PersistentDataManager : MonoBehaviour
     private void Awake() {
         if (minigameMasterList == null) LoadMinigameMasterList();
         if (playerSettings == null) LoadPlayerSettings();
+        
+
+        debug_playerSettings = playerSettings;
+        debug_minigameMasterList = minigameMasterList;
+    }
+
+    private void Start() {
         if (run == null) {
 
             //Adds ONLY current scene game to list -- for testing
@@ -44,12 +51,6 @@ public class PersistentDataManager : MonoBehaviour
                 CreateNewRun(new MinigameList(m));
             }
         }
-
-        debug_playerSettings = playerSettings;
-        debug_minigameMasterList = minigameMasterList;
-    }
-
-    private void Start() {
         INSTANCE = this;
         MusicManager._UpdateVolume();
         SoundManager._UpdateVolume();
