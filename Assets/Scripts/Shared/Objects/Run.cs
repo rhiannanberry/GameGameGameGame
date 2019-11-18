@@ -26,6 +26,7 @@ public class Run : System.Object
         _runLength = runList.Count;
         _minigameIndex = 0;
         _lives = 3;
+        Timers.ResetTimers();
     }
 
 
@@ -82,6 +83,7 @@ public class Run : System.Object
     public void ResetRun() {
         _lives = 3;
         _minigameIndex = 0;
+        Timers.ResetTimers();
     }
 
     //Private Methods

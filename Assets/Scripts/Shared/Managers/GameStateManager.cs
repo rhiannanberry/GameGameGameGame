@@ -31,6 +31,22 @@ public class GameStateManager : MonoBehaviour
 
     private void Start() {
         _animator = GetComponent<Animator>();
+        Timers.PrintTimers();
+    }
+
+    private void Update() {
+        switch(_state) {
+            case ENTERING:   
+            case EXITING:
+                Timers.TRANSITIONS += Time.deltaTime;
+                    break;
+            case INGAME:
+                Timers.MINIGAME += Time.deltaTime;
+                break;
+            case INPAUSE:
+                Timers.PAUSE += Time.deltaTime;
+                break;
+        }
     }
 
     #if UNITY_EDITOR

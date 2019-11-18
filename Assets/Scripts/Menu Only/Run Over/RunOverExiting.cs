@@ -4,55 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class RunOverExiting : ExitingBehaviour
 {
-    [SerializeField] private RectTransform _restartRect = null;
-    [SerializeField] private TransitionData _restartTransitionData = null;
-    [SerializeField] private RectTransform _mainMenuRect = null;
-    [SerializeField] private TransitionData _mainMenuTransitionData = null;
     public static bool restarting = false;
+    public TransitionData data;
 
     protected override void OnStateEnter() {
-        Debug.Log("EXITING");
-        
-        if (restarting) {
-            StartCoroutine(RestartRun());
-        } else {
-            StartCoroutine(GoToMainMenu());
-        }
+        StartCoroutine(EXIT());
     }
 
-    protected override void OnStateExit() {
-        
+    protected override void OnStateExit() {}
+
+    IEnumerator EXIT() {
+        yield return new WaitForSeconds(data.Length+.1f);
+        SceneLoader._CompleteExitToScene();
     }
-
-    IEnumerator GoToMainMenu() {
-        StartCoroutine( _mainMenuTransitionData.Transition( 
-            (t) => {
-                _mainMenuRect.localScale = Vector2.one * (1-t);
-            },
-            (complete) => {
-                if (!complete) return;
-                PersistentDataManager.ClearRun();
-                SceneLoader._LoadMainMenuScene();
-            }
-        ));
-        yield return null;
-    }
-
-    IEnumerator RestartRun() {
-        _restartRect.gameObject.SetActive(true);
-        _restartRect.anchorMin = new Vector2 ( _restartRect.anchorMin.x, 1);
-        StartCoroutine( _restartTransitionData.Transition( 
-            (t) => {
-                _restartRect.anchorMin = new Vector2( _restartRect.anchorMin.x, 1 - t);
-            },
-            (complete) => {
-                if (!complete) return;
-                PersistentDataManager.RUN.ResetRun();
-                SceneLoader._LoadScene(PersistentDataManager.RUN.CurrentScene);
-            }
-        ));
-        yield return null;
-    }
-
-
 }

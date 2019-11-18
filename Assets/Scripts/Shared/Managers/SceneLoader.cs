@@ -19,8 +19,13 @@ public class SceneLoader : MonoBehaviour
     public void LoadMainMenuScene() { SceneManager.LoadScene(mainMenu); }
     public void LoadGameSelectScene() { SceneManager.LoadScene(gameSelect); }
     public void LoadGameOverScene() { SceneManager.LoadScene(gameOver); }
+    public void BeginExitToResetRun() {
+        PersistentDataManager.RUN.ResetRun();
+        _BeginExitToScene(PersistentDataManager.RUN.CurrentScene);
+    }
     public void BeginExitToMainMenu() {
         INSTANCE.sceneName = mainMenu;
+        PersistentDataManager.ClearRun();
         GameStateManager.INSTANCE.TriggerStateChange(GameState.EXITING);
     }
     public void BeginExitToScene(string s) {
@@ -30,7 +35,7 @@ public class SceneLoader : MonoBehaviour
 
     public static void _LoadScene(string name) { SceneManager.LoadScene(name); }
     public static void _LoadScene(int index) { SceneManager.LoadScene(index); }
-    public static void _LoadMainMenuScene() { SceneManager.LoadScene(INSTANCE.mainMenu); }
+    public static void _LoadMainMenuScene() {SceneManager.LoadScene(INSTANCE.mainMenu);}
     public static void _LoadGameSelectScene() { SceneManager.LoadScene(INSTANCE.gameSelect); }
     public static void _LoadGameOverScene() { SceneManager.LoadScene(INSTANCE.gameOver); }
     public static void _BeginExitToCustomPlay() {

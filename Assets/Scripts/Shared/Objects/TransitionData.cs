@@ -70,9 +70,10 @@ public class TransitionData : ScriptableObject
 
         while (_time <= transitionLength) {
             float scaledTime = _offset + GetEased( _time / transitionLength);
-
-            rect.anchorMin = new Vector2( _anchorMin.x + direction.x * scaledTime,   rect.anchorMin.y);
-            rect.anchorMax = new Vector2( _anchorMax.x + direction.x * scaledTime ,      rect.anchorMax.y);
+            rect.anchorMin = _anchorMin + direction * scaledTime;
+            rect.anchorMax = _anchorMax + direction * scaledTime;
+            //rect.anchorMin = new Vector2( _anchorMin.x + direction.x * scaledTime,   rect.anchorMin.y);
+            //rect.anchorMax = new Vector2( _anchorMax.x + direction.x * scaledTime ,      rect.anchorMax.y);
 
             _time += Time.deltaTime;
             yield return null;
@@ -80,8 +81,11 @@ public class TransitionData : ScriptableObject
 
         float maxEase = GetEasedMax();
 
-        rect.anchorMin = new Vector2( _anchorMin.x + direction.x * (_offset + maxEase)   , rect.anchorMin.y);
-        rect.anchorMax = new Vector2( _anchorMax.x + direction.x * (_offset + maxEase)       , rect.anchorMax.y);
+
+        rect.anchorMin = _anchorMin + direction * (_offset + maxEase);
+        rect.anchorMax = _anchorMax + direction * (_offset + maxEase);
+        //rect.anchorMin = new Vector2( _anchorMin.x + direction.x * (_offset + maxEase)   , rect.anchorMin.y);
+        //rect.anchorMax = new Vector2( _anchorMax.x + direction.x * (_offset + maxEase)       , rect.anchorMax.y);
         
         complete(true);
     }

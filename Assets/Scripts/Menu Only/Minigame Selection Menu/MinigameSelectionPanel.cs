@@ -46,10 +46,13 @@ public class MinigameSelectionPanel : MonoBehaviour
 
         foreach(Minigame m in PersistentDataManager.minigameMasterList.minigames) {
             MinigameButton mb = new MinigameButton(Instantiate(_buttonPrefab, transform), Instantiate(_selectedButtonPrefab, _selectedContainer), m);
-            if (_authors[m.Author] == false) {
+            /*if (_authors[m.Author] == false) {
                 mb.SetInteractable();
                 _authors[m.Author] = true;
-            }            
+            }  */   
+
+            //making all games available
+            mb.SetInteractable();       
             _buttons.Add(mb);
         }
     }

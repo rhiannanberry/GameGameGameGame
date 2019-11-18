@@ -20,10 +20,14 @@ public class PersistentDataManager : MonoBehaviour
     public static MinigameList minigameMasterList;
     private static Run run;
 
+    private bool inRun = false;
+
     public static Run RUN { get {
         if (RunExists()){
+            INSTANCE.inRun = true;
             return run;
         } else {
+            INSTANCE.inRun = false;
             return null;
         }
     }}
@@ -54,7 +58,7 @@ public class PersistentDataManager : MonoBehaviour
         INSTANCE = this;
         MusicManager._UpdateVolume();
         SoundManager._UpdateVolume();
-            
+        
     }
 
     #region Static Methods
