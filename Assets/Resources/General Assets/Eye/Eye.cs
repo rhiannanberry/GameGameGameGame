@@ -57,10 +57,12 @@ public class Eye : MonoBehaviour {
             }
             blinkTimer = Random.Range(blinkWaitMin, blinkWaitMax);
         }
-        transform.position = startPos + new Vector3(
-            moveAmount.x * Mathf.Sin(Time.timeSinceLevelLoad + offset.x),
-            moveAmount.y * Mathf.Cos(Time.timeSinceLevelLoad + offset.y),
-            moveAmount.z * Mathf.Sin(Time.timeSinceLevelLoad + offset.z));
+        if (moveAmount != Vector3.zero) {
+            transform.position = startPos + new Vector3(
+                moveAmount.x * Mathf.Sin(Time.timeSinceLevelLoad + offset.x),
+                moveAmount.y * Mathf.Cos(Time.timeSinceLevelLoad + offset.y),
+                moveAmount.z * Mathf.Sin(Time.timeSinceLevelLoad + offset.z));
+        }
         transform.localEulerAngles = startRot + new Vector3(
             rotateAmount.x * Mathf.Sin(Time.timeSinceLevelLoad + offset.x), 
             rotateAmount.y * Mathf.Cos(Time.timeSinceLevelLoad + offset.y), 

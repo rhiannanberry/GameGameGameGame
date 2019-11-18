@@ -10,7 +10,6 @@ public class SFXExitingBehaviour : ExitingBehaviour
 
     protected override void OnStateEnter() {
         PlayClips(playAlways);
-        print (PersistentDataManager.InMinigame);
         if (PersistentDataManager.InMinigame) {
             if (PersistentDataManager.RUN.WonGame) {
                 PlayClips(playOnWin);
@@ -22,7 +21,6 @@ public class SFXExitingBehaviour : ExitingBehaviour
 
     private void PlayClips(string[] clipNames) {
         if (clipNames.Length == 0) {
-            print("fuck");
             return;
         }
         foreach(string c in clipNames) {

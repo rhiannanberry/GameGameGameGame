@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Move2DSideViewPhysics : Movable
 {
-    [SerializeField] private bool canJump;
+    [SerializeField] private bool canJump = false;
 
     [Range(1,99999)]
     [SerializeField] private int numberOfJumps = 1;

@@ -94,8 +94,6 @@ public class PersistentDataManager : MonoBehaviour
 
 
     public void SavePlayerSettings() {
-        print(playerSettings);
-        print(SaveSettings.settingsSavingEnabled);
         if (playerSettings != null && SaveSettings.settingsSavingEnabled) {
             FileSaveUtil.SaveData<PlayerSettings>("playerSettings", playerSettings);
         }

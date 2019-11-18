@@ -4,7 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    [Scene] [SerializeField] private string mainMenu, gameSelect, gameOver;
+    [Scene] [SerializeField] private string mainMenu = "";
+    [Scene] [SerializeField] private string gameSelect = "";
+    [Scene] [SerializeField] private string gameOver = "";
     private static SceneLoader INSTANCE;
     private string sceneName;
 

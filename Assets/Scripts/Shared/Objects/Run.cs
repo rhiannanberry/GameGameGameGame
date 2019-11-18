@@ -40,7 +40,7 @@ public class Run : System.Object
     }
 
     public void GameWon() {
-        float timeTaken = CurrentGame.TimeLimit - TimerBehaviour.time;
+        float timeTaken = CurrentGame.TimeLimit - HUDDetails.time;
         bool isNewRecord = _runList.minigames[_minigameIndex].UpdateWinTime(timeTaken);
         _gameWon = true;
         RunResult();
@@ -98,7 +98,6 @@ public class Run : System.Object
     }
 
     private bool HasNextGame() {
-        Debug.Log(_minigameIndex);
         return _minigameIndex + 1 != _runLength;
     }
 }

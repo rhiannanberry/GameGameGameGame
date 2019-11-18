@@ -360,11 +360,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Minigame UI Prefab
       objectReference: {fileID: 0}
-    - target: {fileID: 4597994462424203748, guid: 6de6f94f0c29c9944b18737f1e06f629,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1173298888257508706, guid: 6de6f94f0c29c9944b18737f1e06f629,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -685,10 +680,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4597994463073271648, guid: 6de6f94f0c29c9944b18737f1e06f629,
+    - target: {fileID: 9054656067636268151, guid: 6de6f94f0c29c9944b18737f1e06f629,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_SizeDelta.x
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6de6f94f0c29c9944b18737f1e06f629, type: 3}
@@ -773,21 +768,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: roll_scene
       objectReference: {fileID: 0}
-    - target: {fileID: -5315740758991435984, guid: a146e0b5519735b43b07c873afc25720,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 05777dff1cda17e469162324505a9dd2, type: 2}
-    - target: {fileID: -5315740758991435984, guid: a146e0b5519735b43b07c873afc25720,
-        type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 531079bac2d5c7c4495c2197e7892cfd, type: 2}
-    - target: {fileID: -5315740758991435984, guid: a146e0b5519735b43b07c873afc25720,
-        type: 3}
-      propertyPath: m_Materials.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: 4feb8fceed453a947b0744a22d62146a, type: 2}
     - target: {fileID: -4216859302048453862, guid: a146e0b5519735b43b07c873afc25720,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -843,6 +823,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5315740758991435984, guid: a146e0b5519735b43b07c873afc25720,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 05777dff1cda17e469162324505a9dd2, type: 2}
+    - target: {fileID: -5315740758991435984, guid: a146e0b5519735b43b07c873afc25720,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 531079bac2d5c7c4495c2197e7892cfd, type: 2}
+    - target: {fileID: -5315740758991435984, guid: a146e0b5519735b43b07c873afc25720,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4feb8fceed453a947b0744a22d62146a, type: 2}
     - target: {fileID: 34501285238852824, guid: a146e0b5519735b43b07c873afc25720,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -1121,6 +1116,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7811981914309505439, guid: 3a793800a07b2a44db78818f15464ccf,
+        type: 3}
+      propertyPath: playOnWin.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811981914309505439, guid: 3a793800a07b2a44db78818f15464ccf,
+        type: 3}
+      propertyPath: playOnWin.Array.data[0]
+      value: win
+      objectReference: {fileID: 0}
     - target: {fileID: 6254220370410396309, guid: 3a793800a07b2a44db78818f15464ccf,
         type: 3}
       propertyPath: audioFiles.Array.size
@@ -1155,16 +1160,6 @@ PrefabInstance:
         type: 3}
       propertyPath: audioFiles.Array.data[2].volume
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7811981914309505439, guid: 3a793800a07b2a44db78818f15464ccf,
-        type: 3}
-      propertyPath: playOnWin.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7811981914309505439, guid: 3a793800a07b2a44db78818f15464ccf,
-        type: 3}
-      propertyPath: playOnWin.Array.data[0]
-      value: win
       objectReference: {fileID: 0}
     - target: {fileID: 3371435517197023695, guid: 3a793800a07b2a44db78818f15464ccf,
         type: 3}

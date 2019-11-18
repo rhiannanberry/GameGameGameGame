@@ -39,6 +39,11 @@ public class PlayerSettings : System.Object
         return (MasterVolume == other.MasterVolume) && (MusicVolume == other.MusicVolume) && (SFXVolume == other.SFXVolume);
     }
 
+    public override int GetHashCode() {
+        var hashCode = 352033288;
+        return hashCode * -1521134295 + _masterVolume.GetHashCode();
+    }
+
     public override string ToString() {
         string str = "Master Volume: " + _masterVolume + "\n" +
                     "Music Volume: " + _musicVolume + "\n" +
