@@ -30,7 +30,7 @@ public class MechRise : MinigameBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (a.GetCurrentAnimatorStateInfo(0).IsName("Idle") && skinnedMesh.activeSelf) {
+        if (a.GetCurrentAnimatorStateInfo(0).IsName("Armature|Idle") && skinnedMesh.activeSelf) {
             skinnedMesh.SetActive(false);
             mesh.SetActive(true);
         }

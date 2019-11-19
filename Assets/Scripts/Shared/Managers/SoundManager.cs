@@ -55,10 +55,17 @@ public class SoundManager : MonoBehaviour
                 m[0].source.Play();
             }
         }
-        //if (m != null) m.source.Play();
     }
 
+    public static void _ModifySource(string name, Func<AudioSource, bool> execute) {
+        AudioFile m = Find(name);
+        if (m != null) {execute(m.source);}
 
+    }
+    public static void _SetPitch(string name, float pitch) {
+        AudioFile m = Find(name);
+        if (m != null) m.source.pitch = pitch;
+    }
     public static void _StopSound(string name) {
         AudioFile m = Find(name);
         if (m != null) m.source.Stop();

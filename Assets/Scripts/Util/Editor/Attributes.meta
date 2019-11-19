@@ -1,13 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD:Assets/Scripts/Util/Editor/Attributes.meta
 guid: 12f4d00407bd24b46810e05defde2494
-=======
-guid: 87cc000d1631a624f8a321867575c899
->>>>>>> 3c147196ec6622098676ca0973807032f25b999d:Assets/Resources/Minigames/Authors/John Britti.meta
-=======
-guid: 12f4d00407bd24b46810e05defde2494
->>>>>>> 3c147196ec6622098676ca0973807032f25b999d
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
