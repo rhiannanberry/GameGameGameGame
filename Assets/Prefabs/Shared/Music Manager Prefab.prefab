@@ -66,3 +66,7 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 96dbf9d4c1f3bb04da373afb451ccb27, type: 3}
     volume: 0.7
     source: {fileID: 0}
+  - audioName: Ambient Office
+    audioClip: {fileID: 8300000, guid: 879ce98616bf94ef095a3996293b3b40, type: 3}
+    volume: 0.3
+    source: {fileID: 0}
