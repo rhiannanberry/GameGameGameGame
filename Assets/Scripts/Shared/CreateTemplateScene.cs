@@ -5,6 +5,7 @@ using System.IO;
 
 public class CreateTemplateScene : MonoBehaviour
 {
+#if UNITY_EDITOR
     private static string scenesFolder = "Resources/Scenes/";
 
     [MenuItem("Assets/Create/Scene From Template", false, 0)]
@@ -35,4 +36,5 @@ public class CreateTemplateScene : MonoBehaviour
         }
         return "Assets/" + scenesFolder + sceneName + ".unity";
     }
+#endif
 }

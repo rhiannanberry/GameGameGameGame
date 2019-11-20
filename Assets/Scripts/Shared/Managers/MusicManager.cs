@@ -17,7 +17,7 @@ public class MusicManager : MonoBehaviour
     private string fadeInUsedString;
     private string fadeOutUsedString;
 
-    private string current;
+    public string current;
 
     #endregion
 
@@ -101,10 +101,13 @@ public class MusicManager : MonoBehaviour
         float music = master * PersistentDataManager.playerSettings.MusicVolume;
         AudioFile c = Find(sceneMusic);
         if (current == null) {
-            FadeIn(sceneMusic, music * c.volume, transitionTime);
+            if (c!=null)
+                FadeIn(sceneMusic, music * c.volume, transitionTime);
         } else if (current != sceneMusic) {
-            FadeOut(current, transitionTime);
-            FadeIn(sceneMusic, music * c.volume, transitionTime);
+            if (current!="")
+                FadeOut(current, transitionTime);
+            if (c!=null)
+                FadeIn(sceneMusic, music * c.volume, transitionTime);
         }
         current = sceneMusic;
     }

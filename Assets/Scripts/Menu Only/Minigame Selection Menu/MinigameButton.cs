@@ -36,9 +36,11 @@ public class MinigameButton : System.Object
             _selectedButton.gameObject.SetActive(value);
             _selected = value;
             if (value) _selectedButton.transform.SetAsLastSibling();
+            SoundManager._PlaySound("click");
             });
        
         _selectedButton.onClick.AddListener(() => _toggle.isOn = false);
+        _selectedButton.onClick.AddListener(() => SoundManager._PlaySound("click"));
 
         _selectedButton.gameObject.SetActive(false);
     }

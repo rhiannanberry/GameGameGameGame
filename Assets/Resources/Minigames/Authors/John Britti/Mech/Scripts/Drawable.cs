@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Drawable : MonoBehaviour {
-    [HideInInspector] public Texture2D tex;
+    public Texture2D tex;
     Material m;
     // Start is called before the first frame update
     void Start() {
-        tex = new Texture2D(2048, 2048, TextureFormat.ARGB32, false);
+        //tex = new Texture2D(2048, 2048, TextureFormat.ARGB32, false);
         m = GetComponent<MeshRenderer>().material;
         var fillColorArray = tex.GetPixels();
         for (var i = 0; i < fillColorArray.Length; ++i) {

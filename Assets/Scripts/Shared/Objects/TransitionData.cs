@@ -99,13 +99,13 @@ public class TransitionData : ScriptableObject
         while (_time <= transitionLength) {
             float scaledTime = _offset + _scale*GetEased( _time / transitionLength);
 
-            rect.transform.localScale = Vector2.one * scaledTime;
+            rect.transform.localScale = Vector3.one * scaledTime;
 
             _time += Time.deltaTime;
             yield return null;
         }
 
-        rect.transform.localScale = Vector2.one * (_offset + _scale*GetEasedMax());
+        rect.transform.localScale = Vector3.one * (_offset + _scale*GetEasedMax());
         
         complete(true);
     }
