@@ -16,4 +16,12 @@ public static class Timers
         Debug.Log("Transitions Time: " + TRANSITIONS);
         Debug.Log("Pause Time: " + PAUSE);
     }
+
+    public static string MINIGAME_STR() {
+        return string.Format("{0:N1}", MINIGAME);
+    }
+
+    public static string PAUSE_STR() {
+        return string.Format("{0:N1}", PAUSE);
+    }
 }

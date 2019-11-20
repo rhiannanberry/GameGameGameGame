@@ -7,6 +7,7 @@ public class MinigamePausing : PauseBehaviour
     [SerializeField] private TransitionData _mainMenuEnterTransition = null;
     [SerializeField] private Transform _mainMenuTransform = null;
     [SerializeField] private Transform _settingsTransform = null;
+    [SerializeField] private Transform _creditsTransform = null;
 
     
     [Header("UI Elements")]
@@ -19,17 +20,18 @@ public class MinigamePausing : PauseBehaviour
     protected override void Start() {
         base.Start();
         
-        Minigame m = PersistentDataManager.RUN.CurrentGame;
-        _title.text = m.Name;
-        _author.text = "Made by: " + m.Author;
-        _description.text = m.Description;
-        _timeLimit.text = m.TimeLimit + " Seconds";
+        
 
         _pauseCanvas.SetActive(false);
     }
 
     protected override void OnStateEnter() {
         _paused = true;
+        Minigame m = PersistentDataManager.RUN.CurrentGame;
+        _title.text = m.Name;
+        _author.text = "Made by: " + m.Author;
+        _description.text = m.Description;
+        _timeLimit.text = m.TimeLimit + " Seconds";
         _pauseCanvas.SetActive(true);
     }
 
@@ -65,6 +67,12 @@ public class MinigamePausing : PauseBehaviour
         _settingsTransform.gameObject.SetActive(true);
         StartCoroutine(_mainMenuEnterTransition.StartTransitionScale(_mainMenuTransform.GetComponent<RectTransform>(), false, complete => {}));
         StartCoroutine(_mainMenuEnterTransition.StartTransitionScale(_settingsTransform.GetComponent<RectTransform>(), true, complete => {}));
+    }
+
+    public void OpenCredits() {
+        _creditsTransform.gameObject.SetActive(true);
+        StartCoroutine(_mainMenuEnterTransition.StartTransitionScale(_mainMenuTransform.GetComponent<RectTransform>(), false, complete => {}));
+        StartCoroutine(_mainMenuEnterTransition.StartTransitionScale(_creditsTransform.GetComponent<RectTransform>(), true, complete => {}));
     }
     
 }
