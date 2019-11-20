@@ -237,10 +237,10 @@ RectTransform:
   m_Father: {fileID: 267142169}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -40, y: -40}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -15, y: -3}
+  m_SizeDelta: {x: 820, y: 410}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &73258437
 MonoBehaviour:
@@ -274,15 +274,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 8
-    m_Right: 8
-    m_Top: 8
-    m_Bottom: 8
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 12, y: 12}
+  m_CellSize: {x: 125, y: 125}
+  m_Spacing: {x: 14, y: 14}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!222 &73258440
@@ -435,7 +435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf358e601ec6d134f9212b7db11be990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _styleManager: {fileID: 913709065}
+  _styleManager: {fileID: 652960539}
   selected: 1
   customUIType: 
 --- !u!1 &115206427
@@ -606,7 +606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf358e601ec6d134f9212b7db11be990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _styleManager: {fileID: 913709065}
+  _styleManager: {fileID: 652960539}
   selected: 3
   customUIType: 
 --- !u!1 &123319249
@@ -993,7 +993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf358e601ec6d134f9212b7db11be990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _styleManager: {fileID: 913709065}
+  _styleManager: {fileID: 652960539}
   selected: 5
   customUIType: 
 --- !u!1 &168917162
@@ -1183,7 +1183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf358e601ec6d134f9212b7db11be990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _styleManager: {fileID: 913709065}
+  _styleManager: {fileID: 652960539}
   selected: 1
   customUIType: 
 --- !u!222 &276485338
@@ -1561,7 +1561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf358e601ec6d134f9212b7db11be990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _styleManager: {fileID: 913709065}
+  _styleManager: {fileID: 652960539}
   selected: 2
   customUIType: 
 --- !u!1 &491365986
@@ -2170,7 +2170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf358e601ec6d134f9212b7db11be990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _styleManager: {fileID: 913709065}
+  _styleManager: {fileID: 652960539}
   selected: 6
   customUIType: 
 --- !u!1 &705231516
@@ -2353,7 +2353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf358e601ec6d134f9212b7db11be990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _styleManager: {fileID: 913709065}
+  _styleManager: {fileID: 652960539}
   selected: 1
   customUIType: 
 --- !u!1 &734790190
@@ -2406,7 +2406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf358e601ec6d134f9212b7db11be990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _styleManager: {fileID: 913709065}
+  _styleManager: {fileID: 652960539}
   selected: 8
   customUIType: 
 --- !u!114 &734790193
@@ -2614,7 +2614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf358e601ec6d134f9212b7db11be990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _styleManager: {fileID: 913709065}
+  _styleManager: {fileID: 652960539}
   selected: 6
   customUIType: 
 --- !u!1 &784533948
@@ -2825,7 +2825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf358e601ec6d134f9212b7db11be990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _styleManager: {fileID: 913709065}
+  _styleManager: {fileID: 652960539}
   selected: 6
   customUIType: 
 --- !u!1 &856552384
@@ -3062,18 +3062,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a793800a07b2a44db78818f15464ccf, type: 3}
---- !u!114 &913709065 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4770481926460426196, guid: 3a793800a07b2a44db78818f15464ccf,
-    type: 3}
-  m_PrefabInstance: {fileID: 913709064}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0487d26e155f264a9f638e23eeaecf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &941640228
 GameObject:
   m_ObjectHideFlags: 0
@@ -3886,7 +3874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf358e601ec6d134f9212b7db11be990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _styleManager: {fileID: 913709065}
+  _styleManager: {fileID: 652960539}
   selected: 6
   customUIType: 
 --- !u!1 &1308095967
@@ -4475,7 +4463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf358e601ec6d134f9212b7db11be990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _styleManager: {fileID: 913709065}
+  _styleManager: {fileID: 652960539}
   selected: 2
   customUIType: 
 --- !u!1 &1449253980
@@ -4898,7 +4886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf358e601ec6d134f9212b7db11be990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _styleManager: {fileID: 913709065}
+  _styleManager: {fileID: 652960539}
   selected: 5
   customUIType: 
 --- !u!1 &1580472909
@@ -5043,7 +5031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf358e601ec6d134f9212b7db11be990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _styleManager: {fileID: 913709065}
+  _styleManager: {fileID: 652960539}
   selected: 5
   customUIType: 
 --- !u!1 &1589502929
@@ -5304,7 +5292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf358e601ec6d134f9212b7db11be990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _styleManager: {fileID: 913709065}
+  _styleManager: {fileID: 652960539}
   selected: 5
   customUIType: 
 --- !u!1 &1637017867
@@ -5430,7 +5418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf358e601ec6d134f9212b7db11be990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _styleManager: {fileID: 913709065}
+  _styleManager: {fileID: 652960539}
   selected: 2
   customUIType: 
 --- !u!114 &1753537753 stripped
@@ -5930,7 +5918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf358e601ec6d134f9212b7db11be990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _styleManager: {fileID: 913709065}
+  _styleManager: {fileID: 652960539}
   selected: 1
   customUIType: 
 --- !u!1 &1894457872
@@ -6128,7 +6116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf358e601ec6d134f9212b7db11be990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _styleManager: {fileID: 913709065}
+  _styleManager: {fileID: 652960539}
   selected: 2
   customUIType: 
 --- !u!1 &2007084260
@@ -6536,7 +6524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf358e601ec6d134f9212b7db11be990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _styleManager: {fileID: 913709065}
+  _styleManager: {fileID: 652960539}
   selected: 1
   customUIType: 
 --- !u!1 &2067659014
@@ -6744,7 +6732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf358e601ec6d134f9212b7db11be990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _styleManager: {fileID: 913709065}
+  _styleManager: {fileID: 652960539}
   selected: 3
   customUIType: 
 --- !u!1 &2139690514
