@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: JohnBritti_Mechorate
   m_EditorClassIdentifier: 
   _name: Mechorate
-  _description: PREPARE YOUR MECH FOR GLORIOUS BATTLE
+  _description: 'PREPARE YOUR MECH FOR GLORIOUS BATTLE
+
+    Rotate with "A" and "D" , zoom with "W" and "S" and draw with the mouse '
   _author: John
   _sceneName: john_Mechorate
   _timeLimit: 10
