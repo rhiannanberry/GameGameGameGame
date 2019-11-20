@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using TMPro;
 
 public class MinigamePausing : PauseBehaviour
 {
@@ -8,10 +7,24 @@ public class MinigamePausing : PauseBehaviour
     [SerializeField] private TransitionData _mainMenuEnterTransition = null;
     [SerializeField] private Transform _mainMenuTransform = null;
     [SerializeField] private Transform _settingsTransform = null;
+
+    
+    [Header("UI Elements")]
+    [SerializeField] private TextMeshProUGUI _title = null;
+    [SerializeField] private TextMeshProUGUI _author = null;
+    [SerializeField] private TextMeshProUGUI _description = null;
+    [SerializeField] private TextMeshProUGUI _timeLimit = null;
     private bool _paused = false;
 
     protected override void Start() {
         base.Start();
+        
+        Minigame m = PersistentDataManager.RUN.CurrentGame;
+        _title.text = m.Name;
+        _author.text = "Made by: " + m.Author;
+        _description.text = m.Description;
+        _timeLimit.text = m.TimeLimit + " Seconds";
+
         _pauseCanvas.SetActive(false);
     }
 
