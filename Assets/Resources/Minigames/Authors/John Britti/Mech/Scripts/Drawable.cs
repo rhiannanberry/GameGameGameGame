@@ -8,11 +8,8 @@ public class Drawable : MonoBehaviour {
     Material m;
     // Start is called before the first frame update
     void Start() {
-        print(GetComponent<MeshCollider>().sharedMesh.isReadable);
-        // GetComponent<MeshCollider>().sharedMesh.isReadable
         tex = new Texture2D(textureSize, textureSize, TextureFormat.RGBA32, false);
         m = GetComponent<MeshRenderer>().material;
-        // Texture2D texture = Instantiate(m.mainTexture) as Texture2D;
         m.mainTexture = tex;
         var fillColorArray = tex.GetPixels();
         for (var i = 0; i < fillColorArray.Length; ++i) {
