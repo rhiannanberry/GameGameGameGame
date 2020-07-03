@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class MechRise : MinigameBehaviour {
     Animator a;
-    AudioSource source;
     public GameObject skinnedMesh;
     public GameObject mesh;
     // Start is called before the first frame update
     protected override void Start() {
         base.Start();
         a = GetComponent<Animator>();
-        source = GetComponent<AudioSource>();
         Invoke("StartRise", 3);
     }
 

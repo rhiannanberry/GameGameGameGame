@@ -17,7 +17,7 @@ MonoBehaviour:
     time limit!
   _author: 
   _sceneName: james_RollerMadness2
-  _timeLimit: 10
+  _timeLimit: 20
   _scoreBased: 1
   _scoreToWin: 5
   _survival: 0

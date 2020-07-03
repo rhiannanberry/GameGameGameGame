@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
     {
         if (Microphone.devices.Length > 0)
         {
-            microphoneInput = Microphone.Start(Microphone.devices[1], true, 999, 44100);
+            microphoneInput = Microphone.Start(null, true, 999, 44100);
             microphoneInitialized = true;
             foreach (var mic in Microphone.devices) {
                 print(mic);

@@ -38,7 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Resources/Scenes/john_Mechorate.unity
     guid: 6310fefdbc6304242a18ac3fc27ce744
-  - enabled: 1
+  - enabled: 0
     path: Assets/Resources/Scenes/rigved_ShootEm_scene.unity
     guid: 9bc0e1dd8aaa041d7b0ff51aca95abe1
   - enabled: 1
@@ -53,4 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Resources/Scenes/john_SwitchBoard.unity
     guid: a84f03cc026144030ab1765d0d125712
+  - enabled: 1
+    path: Assets/Resources/Minigames/Authors/Edward Storey/Ball Collection!/edwardstorey_ballcollection_scene.unity
+    guid: 6ac42c64bf4c343da8ef487c409b148a
   m_configObjects: {}

@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: mitchell_and_nico_skiles_walkway_minigame
   m_EditorClassIdentifier: 
   _name: Skiles Walkway
-  _description: Use arrow keys to cross Skiles Walkway without being hit with any
-    student organization flyers!
+  _description: Use WASD to cross Skiles Walkway without being hit with any student
+    organization flyers!
   _author: Mitchell Philipp and Nico Bartholomai
-  _scenePath: Assets/Resources/Minigames/Authors/Mitchell Philipp and Nico Bartholomai/Skiles
-    Walkway/mitchell_and_nico_skiles_walkway_scene.unity
   _sceneName: mitchell_and_nico_skiles_walkway_scene
   _timeLimit: 20
+  _scoreBased: 0
+  _scoreToWin: 0
+  _survival: 0

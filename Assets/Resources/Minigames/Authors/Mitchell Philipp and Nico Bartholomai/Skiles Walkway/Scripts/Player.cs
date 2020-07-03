@@ -33,21 +33,8 @@ public class Player : MinigameBehaviour
     {
         if (running) {
             bool walking = false;
-            Vector2 newForce = new Vector2(0,0);
-            if (Input.GetKey(KeyCode.UpArrow)) {
-                newForce += Vector2.up;
-                walking = true;
-            }
-            if (Input.GetKey(KeyCode.RightArrow)) {
-                newForce += Vector2.right;
-                walking = true;
-            }
-            if (Input.GetKey(KeyCode.DownArrow)) {
-                newForce += Vector2.down;
-                walking = true;
-            }
-            if (Input.GetKey(KeyCode.LeftArrow)) {
-                newForce += Vector2.left;
+            Vector2 newForce = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
+            if (newForce != Vector2.zero) {
                 walking = true;
             }
             newForce.Normalize();
